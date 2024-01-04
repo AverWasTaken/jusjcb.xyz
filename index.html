@@ -9,11 +9,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik+Scribble&display=swap" rel="stylesheet">
     <script src="https://app.embed.im/snow.js" defer></script>
+    <script>
+        document.addEventListener('touchmove', function(e) {
+          e.preventDefault();
+        }, { passive: false });
+      </script>
     <style>
 
-        body{
-            background-color: #121212;
-            overflow-y: hidden
+        html, body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-color: #121212;
         }
 
       .text{
