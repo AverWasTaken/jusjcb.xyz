@@ -4,15 +4,57 @@
   <head>
     <meta charset="utf-8">
     <title>Heyo!!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Rubik+Scribble&display=swap" rel="stylesheet">
+    <script src="https://app.embed.im/snow.js" defer></script>
     <style>
-      .test{
-        font-family: Arial;
+
+        body{
+            background-color: #121212;
+            overflow-y: hidden
+        }
+
+      .text{
+        font-family: Comfortaa;
         text-align: center;
+        color: white;
+      }
+
+      .textcert{
+        font-family: Comfortaa;
+        text-align: center;
+        color: white;
+        font-style: italic;
+        margin-top: -10px;
+      }
+
+      .content{
+        border-style: solid;
+        border-color: white;
+        border-radius: 20px;
+        width: 400px;
+        height: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+        box-shadow: none;
+        transition: box-shadow 0.21s ease;
+      }
+
+      .content:hover{
+        box-shadow: white 5px 5px;
       }
     </style>
   </head>
 
   <body>
-    <h1 class="test">Hello!</h1>
+
+    <div class="content">
+        <h1 class="text" style="text-decoration: underline;">Hey, I'm Jacob!</h1>
+        <h4 class="textcert">Professionally Certified in HTML/CSS</h4>
+        <hr>
+
+    </div>
   </body>
 </html>
