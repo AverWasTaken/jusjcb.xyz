@@ -14,7 +14,14 @@
         font-family: Comfortaa;
         text-align: center;
         color: white;
-        margin-top: 50px;
+        margin-top: 30px;
+      }
+
+      .follow{
+        font-family: Comfortaa;
+        text-align: center;
+        color: white;
+        margin-top: 20px;
       }
 
       .textcert{
@@ -47,14 +54,14 @@
         border-color: white;
         border-radius: 15px;
         margin-left: 175px;
-        margin-top: 10px;
+        margin-top: 11px;
       }
 
       .description{
         color: white;
         font-family: comfortaa;
         text-align: center;
-        margin-top: 50px;
+        margin-top: 20px;
       }
 
       a{
