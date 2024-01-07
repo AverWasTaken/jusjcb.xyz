@@ -23,7 +23,7 @@
   right: 58px;
   margin-top: -30px;
   box-shadow: white 11px 4px 10px;
-  transition: box-shadow 0.5s ease;
+  transition: box-shadow 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .namecontainer:hover{
