@@ -4,66 +4,155 @@
         background-color: #121212;
         }
 
-      .text{
-        font-family: Comfortaa;
-        text-align: center;
-        color: white;
-      }
+.name{
+  color: white;
+  font-family: comfortaa;
+  font-size: 50pt;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
 
-      .github{
-        font-family: Comfortaa;
-        text-align: center;
-        color: white;
-        margin-top: 30px;
-      }
+.namecontainer{
+  width: 400px;
+  height: 180px;
+  border-style: solid;
+  color: white;
+  border-radius: 200px;
+  position: relative;
+  right: 58px;
+  margin-top: -30px;
+  box-shadow: white 11px 4px 10px;
+  transition: box-shadow 0.5s ease;
+}
 
-      .follow{
-        font-family: Comfortaa;
-        text-align: center;
-        color: white;
-        margin-top: 20px;
-      }
+.namecontainer:hover{
+  width: 400px;
+  height: 180px;
+  border-style: solid;
+  color: white;
+  border-radius: 200px;
+  position: relative;
+  right: 58px;
+  margin-top: -30px;
+  box-shadow: white 0px 0px;
+}
 
-      .textcert{
-        font-family: Comfortaa;
-        text-align: center;
-        color: white;
-        font-style: italic;
-        margin-top: -10px;
-      }
+.line{
+  width: 1000000px;
+  height: 0.1px;
+  color: white;
+  border-style: solid;
+  margin-top: -5px;
+  border-radius: 50px;
+}
 
-      .content{
-        border-style: solid;
-        border-color: white;
-        border-radius: 20px;
-        width: 400px;
-        height: 400px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 250px;
-        box-shadow: none;
-        transition: box-shadow 0.21s ease;
-      }
+.info{
+  position: absolute;
+  width: 100%;
+  top: 55px;
+  left: 35%;
+  transform: translateX(-50%);
+  text-align: center;
+}
 
-      .content:hover{
-        box-shadow: white 5px 5px;
-      }
+.socials{
+  position: absolute;
+  width: 100%;
+  top: 5px;
+  left: 78%;
+  transform: translateX(-50%);
+  text-align: center;
+}
 
-      .insta{
-        border-style: solid;
-        border-color: white;
-        border-radius: 15px;
-        margin-left: 175px;
-        margin-top: 11px;
-      }
+.sdesc{
+  font-family: comfortaa;
+  color: white;
+  font-size: 19pt;
+  font-style: italic;
+}
 
-      .description{
-        color: white;
-        font-family: comfortaa;
-        text-align: center;
-        margin-top: 20px;
-      }
+.insta{
+  position: absolute;
+  left: 30%;
+}
 
-      a{
-        color: white;
-      }
+.snap{
+  position: absolute;
+  left: 49%
+}
+
+.snapuser{
+  color: white;
+  font-family: comfortaa;
+  font-size: 15pt;
+  position: absolute;
+  left: 48%;
+  top: 110px;
+}
+
+.discord{
+  position: absolute;
+  left: 66%
+}
+
+.discuser{
+  color: white;
+  font-family: comfortaa;
+  font-size: 15pt;
+  position: absolute;
+  left: 65%;
+  top: 110px;
+}
+
+.instauser{
+  color: white;
+  font-family: comfortaa;
+  font-size: 15pt;
+  position: absolute;
+  left: 29%;
+  top: 110px;
+}
+
+.desc{
+  font-family: comfortaa;
+  color: white;
+  font-size: 19pt;
+  font-style: italic;
+}
+
+.line2{
+  color: white;
+  border-style: solid;
+  margin-top: -12px;
+  position: absolute;
+  width: 0px;
+  height: 159px;
+  top: 10px;
+  left: 52%;
+}
+
+.cone{
+  position: absolute;
+  left: 47%;
+  margin-top: 200px;
+}
+
+.wip{
+  color: orange;
+  font-family: comfortaa;
+  position: absolute;
+  left: 37.5%;
+  margin-top: 500px;
+  font-size: 40pt;
+  word-break: keep-all;
+}
+
+.footertxt{
+  color: white;
+  font-family: comfortaa;
+  position: absolute;
+  left: 45%;
+  margin-top: 810px;
+  text-decoration: underline;
+}
