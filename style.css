@@ -51,7 +51,7 @@
   position: absolute;
   width: 100%;
   top: 55px;
-  left: 35%;
+  left: 33%;
   transform: translateX(-50%);
   text-align: center;
 }
@@ -142,7 +142,7 @@
   color: orange;
   font-family: comfortaa;
   position: absolute;
-  left: 37.5%;
+  left: 39%;
   margin-top: 500px;
   font-size: 40pt;
   word-break: keep-all;
@@ -153,6 +153,6 @@
   font-family: comfortaa;
   position: absolute;
   left: 45%;
-  margin-top: 810px;
+  margin-top: 1130px;
   text-decoration: underline;
 }
