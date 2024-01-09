@@ -1,16 +1,32 @@
 body{
     background-color: #121212;
+    overflow-y: hidden;
 }
 
 .Title{
     text-align: center;
     font-family: comfortaa;
     color: white;
+    text-decoration: underline;
 }
 
-.container{
-    display: flex;
-    align-items: center;
-    width: 300px;
-    height: 300px;
+.Title2{
+    text-align: center;
+    font-family: comfortaa;
+    color: white;
+    font-style: italic;
 }
+
+.dev{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   margin-bottom: 0;
+}
+
+.names{
+    margin-top: 0;
+}
+
+
