@@ -1,0 +1,292 @@
+body{
+    background-image: linear-gradient(45deg, #91471f, #ac7152);
+    overflow-x: hidden;
+}
+
+
+.Info{
+    font-family: Comfortaa;
+    color: white;
+    text-align: center;
+    margin-bottom: auto;
+    display: block;
+    margin-top: 100px;
+    font-style: italic;
+}
+
+
+.Logo{
+    border-radius: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    top: 15px;
+    box-shadow: 15px 10px 5px black ;
+}
+
+.Line{
+    margin-top: -70px;
+    width: 2000px;
+    height: 200px;
+}
+
+.Slogan{
+    font-family: Comfortaa;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.Center-Box{
+    box-shadow: 10px 10px 5px black ;
+    color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50px;
+    width: 450px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    bottom: 50px;
+}
+
+.Center-Box-Menu{
+    box-shadow: 10px 10px 5px black ;
+    color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50px;
+    width: 700px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    bottom: 50px;
+}
+
+.Center-Box-Menu2{
+    box-shadow: 10px 10px 5px black ;
+    color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50px;
+    width: 700px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    bottom: 10px;
+}
+
+.Center-Box-Menu3{
+    box-shadow: 10px 10px 5px black ;
+    color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50px;
+    width: 700px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    bottom: -30px;
+}
+
+.Center-Box-Menu4{
+    box-shadow: 10px 10px 5px black ;
+    color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50px;
+    width: 700px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    bottom: -67px;
+}
+
+.Center-Box-Menu5{
+    box-shadow: 10px 10px 5px black ;
+    color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50px;
+    width: 700px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    bottom: 4px;
+}
+
+.ExtrasBox{
+    box-shadow: 10px 10px 5px black ;
+    color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50px;
+    width: 400px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    bottom: -95px;
+}
+
+.CenAbout{
+    font-family: Comfortaa;
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 25pt
+}
+
+.CenAboutDes{
+    font-family: Comfortaa;
+    color: white;
+    text-align: center;
+    word-wrap:break-word;
+}
+
+.LineCen{
+    margin-top: -70px;
+    width: 450px;
+    height: 200px;
+}
+
+.LineCenMenu{
+    margin-top: -100px;
+    width: 700px;
+    height: 200px;
+}
+
+.NavMenu1{
+    font-family: Comfortaa;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-top: -50px;
+}
+
+
+.NavMenu2{
+    font-family: Comfortaa;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+}
+
+.NavMenu3{
+    font-family: Comfortaa;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin-top: 65px;
+}
+
+.NavMenu1href{
+    color: white;
+}
+
+.NavMenu2href{
+    color: white;
+}
+
+.NavMenu3href{
+    color: white;
+}
+
+.Coffee{
+    position: relative;
+    left: -24.2px;
+}
+
+.CoffeeList{
+    display: table;
+    margin: 0 auto;
+    font-size: 20pt;
+    margin-top: -30px;
+    font-family: Comfortaa;
+}
+
+.HoursList{
+    display: table;
+    margin: 0 auto;
+    font-size: 20pt;
+    margin-top: -70px;
+    font-family: Comfortaa;
+}
+
+.NonCoffeeList{
+    display: table;
+    margin: 0 auto;
+    font-size: 20pt;
+    margin-top: -65px;
+    font-family: Comfortaa;
+}
+
+.BlendOrIce{
+    display: table;
+    margin: 0 auto;
+    font-size: 20pt;
+    margin-top: -45px;
+    font-family: Comfortaa;
+}
+
+.Food{
+    display: table;
+    margin: 0 auto;
+    font-size: 20pt;
+    margin-top: 20px;
+    font-family: Comfortaa;
+}
+
+.ExtrasList{
+    display: table;
+    margin: 0 auto;
+    font-size: 18pt;
+    margin-top: -65px;
+    font-family: Comfortaa;
+}
+
+.Extras{
+    font-family: Comfortaa;
+    text-align: center;
+    font-size: 14pt;
+}
+
+.ExtrasBox a{
+    color: White;
+}
+
+.Home{
+    font-family: Comfortaa;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 22pt;
+    color: white;
+}
+
+.Homehours{
+    font-family: Comfortaa;
+    text-align: center;
+    margin-top: 35px;
+    font-size: 22pt;
+    color: white;
+}
+
+
