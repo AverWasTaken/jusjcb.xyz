@@ -52,6 +52,7 @@ html, body{
     width: 500px;
     height: 500px;
     background-color: white;
+    opacity: 0.8;
     margin-left: auto;
     margin-right: auto;
     margin-top: 200px;
@@ -63,6 +64,55 @@ html, body{
     box-shadow: rgb(255, 255, 255) 0px 0px 150px;
 
 }
+
+.discord{
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 30pt;
+    text-decoration: underline;
+}
+
+.discord-icon{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -90px;
+    z-index: 10;
+}
+
+.seperator{
+    width: 484px;
+    height: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -180px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.explore{
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size: 25pt;
+    margin-top: -135px;
+}
+
+a{
+    color: black;
+}
+
 
 
 
