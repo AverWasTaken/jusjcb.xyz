@@ -16,6 +16,17 @@ html, body{
     margin-top: -20px
 }
 
+.content-area{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 1000px;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
 .why{
     text-align: center;
     color: white;
