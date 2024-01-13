@@ -139,4 +139,45 @@ a{
   text-decoration: none;
 }
 
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 30pt; /* Smaller font size for mobile */
+    margin-top: 10px;
+  }
 
+  .infobox {
+    width: 90%; /* More width percentage for smaller screens */
+    height: auto; /* Height auto for dynamic content */
+    margin-top: 10%;
+    border-radius: 40px; /* Smaller border radius */
+  }
+
+  .infotext {
+    font-size: 20pt; /* Smaller font size for mobile */
+  }
+
+  .info {
+    font-size: 16px; /* Smaller font size for mobile text */
+    padding: 10px;
+  }
+
+  .credit {
+    margin-top: 20%; /* Adjust spacing */
+    font-size: 12pt; /* Smaller font size for mobile */
+  }
+
+  .button {
+    width: 90%; /* More width percentage for smaller screens */
+    height: 50px; /* Smaller height for mobile */
+    margin-top: 10%;
+  }
+
+  .button:hover {
+    margin-top: 12%;
+  }
+
+  .instatext {
+    font-size: 16pt; /* Smaller font size for mobile */
+    margin-top: -25%; /* Adjust position */
+  }
+}
