@@ -5,6 +5,7 @@ html, body{
     margin: 0;
     padding: 0;
     height: 100%;
+
 }
 
 .glow{
@@ -26,6 +27,7 @@ html, body{
     font-family: 'Quicksand', sans-serif;
     font-size: 60pt;
     margin-top: 0;
+    text-shadow: black 1px 1px;
 }
 
 .arrow{
@@ -47,6 +49,7 @@ html, body{
     font-style: italic;
     margin-top: 40px;
     text-decoration: underline;
+    text-shadow: black 1px 1px;
 }
 
 .main{
