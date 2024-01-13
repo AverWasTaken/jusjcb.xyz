@@ -1,158 +1,142 @@
- html, body {
-        overflow-x: hidden;
-        overflow-y: hidden;
-        background-color: #121212;
-        }
+@font-face {
+  font-family: 'Mont';
+  src: url('Mont.otf');
+}
 
-.name{
-  color: white;
-  font-family: comfortaa;
-  font-size: 50pt;
-  padding: 10px;
+
+html, body{
+  background-size: 100%;
+  background-color: #121212;
+  overflow-y: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.glow{
+  background: none;
+  width: 100%;
+  height: 20px;
+  background-color: transparent;
+  box-shadow: 0 0 80px white;
+  margin-top: -20px
+}
+
+.title{
   text-align: center;
-  margin-top: 20px;
+  color: white;
+  font-family: Mont;
+  margin-top: 30px;
+  font-size: 60pt;
+  text-shadow: black 1px 1px;
+  text-decoration: underline;
 }
 
-.namecontainer{
-  width: 400px;
-  height: 180px;
+.infobox{
+  width: 500px;
+  height: 740px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 80px;
+  background-color: white;
+  opacity: 0.8;
+  margin-top: 100px;
+  transition: all 0.6s ease;
+  box-shadow: rgb(255, 255, 255) 0px 0px 150px;
+  border-color: black;
   border-style: solid;
-  color: white;
-  border-radius: 200px;
-  position: relative;
-  right: 58px;
-  margin-top: -30px;
-  box-shadow: white 11px 4px 10px;
-  transition: box-shadow 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  border-width: 3px;
 }
 
-.namecontainer:hover{
-  width: 400px;
-  height: 180px;
-  border-style: solid;
-  color: white;
-  border-radius: 200px;
-  position: relative;
-  right: 58px;
-  margin-top: -30px;
-  box-shadow: white 0px 0px;
+.infobox:hover{
+  box-shadow: rgb(255, 255, 255) 0px 0px 50px;
 }
 
-.line{
-  width: 1000000px;
-  height: 0.1px;
-  color: white;
-  border-style: solid;
-  margin-top: -5px;
-  border-radius: 50px;
+.wave{
+  height: 80px;
+  width: 80px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  margin-bottom: 0%;
+  margin-top: 10%;
+}
+
+.infotext{
+  font-family: Mont;
+  color: rgb(16, 16, 16);
+  text-align: center;
+  padding: 10px 0;
+  font-size: 40pt;
 }
 
 .info{
-  position: absolute;
-  width: 100%;
-  top: 55px;
-  left: 33%;
-  transform: translateX(-50%);
+  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  padding: 20px;
+  font-size: 22px;
+  word-wrap:break-word;
+  margin-top: -5%;
   text-align: center;
 }
 
-.socials{
-  position: absolute;
-  width: 100%;
-  top: 5px;
-  left: 78%;
-  transform: translateX(-50%);
+.credit{
   text-align: center;
-}
-
-.sdesc{
-  font-family: comfortaa;
+  font-family: Mont;
+  margin-top: 11%;
+  font-size: 15pt;
   color: white;
-  font-size: 19pt;
-  font-style: italic;
+}
+
+
+.home{
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -20px;
+}
+
+.button{
+  background-image: linear-gradient(45deg, black, gray);
+  width: 300px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+  border-radius: 10px;
+  transition: all .2s ease;
+}
+
+.button:hover{
+  margin-top: 23%;
 }
 
 .insta{
-  position: absolute;
-  left: 30%;
+  width: 50px;
+  height: 50px;
+  padding: 10px 0;
+  margin-left: 4%;
 }
 
-.snap{
-  position: absolute;
-  left: 49%
-}
-
-.snapuser{
+.instatext{
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   color: white;
-  font-family: comfortaa;
-  font-size: 15pt;
-  position: absolute;
-  left: 48%;
-  top: 110px;
+  text-align: center;
+  margin-top: -20.5%;
+  font-size: 24pt;
+  left: 7%
 }
 
-.discord{
-  position: absolute;
-  left: 66%
+a{
+  text-decoration: none;
 }
 
-.discuser{
-  color: white;
-  font-family: comfortaa;
-  font-size: 15pt;
-  position: absolute;
-  left: 65%;
-  top: 110px;
-}
 
-.instauser{
-  color: white;
-  font-family: comfortaa;
-  font-size: 15pt;
-  position: absolute;
-  left: 29%;
-  top: 110px;
-}
-
-.desc{
-  font-family: comfortaa;
-  color: white;
-  font-size: 19pt;
-  font-style: italic;
-}
-
-.line2{
-  color: white;
-  border-style: solid;
-  margin-top: -12px;
-  position: absolute;
-  width: 0px;
-  height: 159px;
-  top: 10px;
-  left: 52%;
-}
-
-.cone{
-  position: absolute;
-  left: 47%;
-  margin-top: 200px;
-}
-
-.wip{
-  color: orange;
-  font-family: comfortaa;
-  position: absolute;
-  left: 39.6%;
-  margin-top: 500px;
-  font-size: 40pt;
-  word-break: keep-all;
-}
-
-.footertxt{
-  color: white;
-  font-family: comfortaa;
-  position: absolute;
-  left: 45%;
-  margin-top: 1130px;
-  text-decoration: underline;
-}
