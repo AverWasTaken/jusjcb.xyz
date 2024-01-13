@@ -1,5 +1,7 @@
 
 html, body{
+    background-image: url(content/background.png);
+    background-size: 100%;
     background-color: #121212;
     overflow-y: hidden;
     margin: 0;
@@ -16,17 +18,6 @@ html, body{
     margin-top: -20px
 }
 
-.content-area{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    max-height: 1000px;
-    padding: 40px 0;
-    box-sizing: border-box;
-}
-
 .why{
     text-align: center;
     color: white;
@@ -36,6 +27,7 @@ html, body{
     font-family: 'Quicksand', sans-serif;
     margin-top: 50px;
     font-size: 60pt;
+    text-shadow: black 1px 1px;
 }
 
 .infobox{
