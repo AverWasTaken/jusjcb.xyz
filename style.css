@@ -82,7 +82,13 @@ html, body{
   text-align: center;
 }
 
-
+.credit{
+  text-align: center;
+  font-family: Mont;
+  margin-top: 11%;
+  font-size: 15pt;
+  color: white;
+}
 
 
 .home{
