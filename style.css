@@ -40,7 +40,7 @@ html, body{
   border-radius: 80px;
   background-color: white;
   opacity: 0.8;
-  margin-top: 3%;
+  margin-top: 5%;
   transition: all 0.6s ease;
   box-shadow: rgb(255, 255, 255) 0px 0px 150px;
   border-color: black;
@@ -141,34 +141,35 @@ a{
 
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 30pt; /* Smaller font size for mobile */
+    font-size: 30pt; 
     margin-top: 10px;
+    margin-bottom: 10%;
   }
 
   .infobox {
-    width: 90%; /* More width percentage for smaller screens */
-    height: auto; /* Height auto for dynamic content */
+    width: 90%; 
+    height: 500px; 
     margin-top: 10%;
-    border-radius: 40px; /* Smaller border radius */
+    border-radius: 40px; 
   }
 
   .infotext {
-    font-size: 20pt; /* Smaller font size for mobile */
+    font-size: 20pt; 
   }
 
   .info {
-    font-size: 16px; /* Smaller font size for mobile text */
+    font-size: 16px; 
     padding: 10px;
   }
 
   .credit {
-    margin-top: 20%; /* Adjust spacing */
-    font-size: 12pt; /* Smaller font size for mobile */
+    margin-top: 20%; 
+    font-size: 12pt; 
   }
 
   .button {
-    width: 90%; /* More width percentage for smaller screens */
-    height: 50px; /* Smaller height for mobile */
+    width: 90%; 
+    height: 50px; 
     margin-top: 10%;
   }
 
@@ -176,8 +177,15 @@ a{
     margin-top: 12%;
   }
 
+  .insta{
+    height: 30px;
+    width: 30px;
+  }
+
   .instatext {
-    font-size: 16pt; /* Smaller font size for mobile */
-    margin-top: -25%; /* Adjust position */
+    font-size: 23pt; 
+    margin-top: -16%; 
   }
 }
+
+
