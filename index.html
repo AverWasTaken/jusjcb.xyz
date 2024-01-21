@@ -31,27 +31,76 @@
           </script>
     </head>
     
-    <body>
-        <div class="glow"></div>
-        <header class="header">
-            <h1 class="title">Hey!</h1>
-        </header>
+    <body> 
+        <div class="content-area">
+            <h1 class="text">Jacob Young (ayvyr) <br> <span class="small">I'm <span id="typing"></span></h1>
+                <span id="typing"></span>
 
-        <section>
-            <div class="infobox">
-                <img src="content/wave.png" class="wave">
-                <h1 class="infotext">I'm Jacob,</h1>
-                <p class="info">
-                    a 16 year old developer that specailizes in Python & Web Development. Located in beautiful northwest Idaho, I enjoy a variety of activites,
-                    and the beautiful weather. If you'd like a quote, website, or just to chat, you can find me at the contact below. 
-                </p>
+                <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        
+                <script>
+                    function shuffleArray(array) {
+                        for (let i = array.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [array[i], array[j]] = [array[j], array[i]];
+                        }
+                    }
                 
-                <div class="button">
-                  <img src="content/instagram.png" class="insta">
-                  <a href="https://www.instagram.com/jus.jcb/" target="_blank"><h1 class="instatext">@jus.jcb</h1></a>
-                </div>
-            </div>
-            <h3 class="credit">developed with ❤️, by Jacob.</h3>
-        </section>
+                    const words = [
+                    'a developer.',
+                    'a gamer.',
+                    'a creator.',
+                    'an ai enthusiast.',
+                    'a cool guy.',
+                    'not your mom.',
+                    'certified in html.',
+                    'certified in css.',
+                    'a valorant player.',
+                    'not your dad.',
+                    'confused sometimes.',
+                    'running out of things to say...',
+                    'stressing out.',
+                    'tired.',
+                    'needing a coffee.',
+                    'trying my best.',
+                    'doing all I can.',
+                    'skipping leg day.',
+                    'going back to bed.',
+                    'probably playing games.',
+                    'listening to spotify.',
+                    'looking for my mom.',
+                    'building a fort.',
+                    'a part-time superhero.',
+                    'a wannabe astronaut.',
+                    'a secret agent.',
+                    'a couch potato.',
+                    'a chocolate thief.',
+                    'a time traveler.',
+                    'tired of coding this',
+                    'a professional napper.',
+                    'a cookie monster.',
+                    'a unicorn whisperer.',
+                    'a future millionaire.',
+                    'a pretend adult.',
+                    'a wizard harry.',];
+                    shuffleArray(words); 
+                
+                    var typed = new Typed('#typing', {
+                        strings: words,
+                        typeSpeed: 70,
+                        backSpeed: 50,
+                        backDelay: 1000,
+                        startDelay: 500,
+                        loop: true,
+                        showCursor: true,
+                        cursorChar: '|',
+                    });
+                </script>
+        
+                <!--<div class="interract">
+                    <img src="content/instagram.png" class="insta">
+                    </div>-->
+            
+        </div>
     </body>
 </html>
