@@ -38,7 +38,7 @@ function updatePeriod() {
     const timeUntilSchoolOrWeekendMessage = () => {
         const now = new Date();
         const dayOfWeek = now.getDay();
-        const schoolStartTime = parseTime('7:00'); // School start time for reference
+        const schoolStartTime = parseTime('8:00'); // School start time for reference
 
         if (dayOfWeek === 0 || dayOfWeek === 6) {
             // Weekend
