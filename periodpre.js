@@ -58,7 +58,7 @@ function updatePeriod() {
         if (!currentPeriod) {
             return `You're currently outside of school hours.`;
         } else if (currentPeriod.period === 'Lunch') {
-            return `Yay! Lunch ends in ${remainingTime}.`;
+            return `Awh, Lunch ends in ${remainingTime}. :(`;
         } else {
             const nextPeriodMessage = isPeriodBeforeLunch(currentPeriod, schedule.indexOf(currentPeriod), schedule)
                 ? ' Lunch is next!'
