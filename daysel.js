@@ -10,16 +10,13 @@ function updateDay() {
         // If today is Sunday, add 1 day; if it's Saturday, add 2 days to get to Monday
         nextMonday.setDate(today.getDate() + (today.getDay() === 0 ? 1 : 2));
 
-        // Calculate the difference in days from the known "B day"
-        let diffTime = Math.abs(nextMonday - knownBday);
-        let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-        // Determine if next Monday will be an A day or B day
+        let diffTime = Math.abs(today - knownBday);
+        let diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+        
         let dayType = diffDays % 2 === 0 ? 'B' : 'A';
         
-        // Update the message for the weekend
         if (daySpan && pDay) {
-            pDay.innerHTML = `Today is the weekend! It will be a ${dayType} day on Monday`;
+            pDay.innerHTML = `Today is a, <span class="day sel">${dayType} day</span>`;
         }
     } else {
         // For weekdays, calculate as before
