@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'Mont';
+    src: url('Mont.otf');
+}
+
+@font-face{
+    font-family: 'VCS-B';
+    src: url('ViceCitySans-Bold.otf')
+}
+
+@font-face{
+    font-family: 'VCS-I-B';
+    src: url('ViceCitySans-ItalicBold.otf')
+}
+
+@font-face{
+    font-family: 'VCS-I-L';
+    src: url('ViceCitySans-ItalicLight.otf')
+}
+
+@font-face{
+    font-family: 'VCS-L';
+    src: url('ViceCitySans-Light.otf')
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+  
+.fade-in {
+    animation: fadeIn 2s ease;
+}
+
+html, body{
+    background-image: url(content/shsbackground.png);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-size: cover; 
+    height: 100%; 
+    overflow-x: hidden; 
+}
+
+.top-area{
+    background-color: rgba(255, 0, 0, 0.439);
+    box-shadow: red 0 0 50px;
+    border-radius: 50px;
+    width: 60%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    transition: ease 0.2s;
+}
+
+.content-area{
+    background-color: rgba(255, 0, 0, 0.439);
+    box-shadow: red 0 0 50px;
+    width: 30%;
+    border-radius: 50px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6%;
+}
+
+
+.day{
+    font-size: 2vh;
+    text-align: center;
+    font-family: VCS-I-L;
+}
+
+.time{
+    color: white;
+    font-family: 'VCS-I-B';
+    font-size: 2vh;
+    margin-bottom: 5%;
+    text-decoration: underline;
+}
+
+
+.top-area:hover{
+    box-shadow: red 0 0 100px;   
+}
+
+.welc{
+    font-family: VCS-B;
+    color: white;
+    font-size: 6vh;
+}
+
+@media screen and (max-width: 768px) {
+
+    .top-area{
+        width: 80%;
+    }
+    .welc{
+        font-size: 3.9vh;
+        text-align: center;
+    }
+
+    .content-area{
+        width: 80%;
+        margin-top: 20%;
+    }
+
+    .time{
+        font-size: 2.5vh;
+        text-align: center;
+        padding: 2%;
+    }
+}
