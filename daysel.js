@@ -1,5 +1,5 @@
 function updateDay() {
-    let knownBday = new Date('2024-01-22'); // Known "B day"
+    let knownBday = new Date('2024-01-23'); // Known "B day"
     knownBday.setHours(0, 0, 0, 0); // Set time to 00:00:00.000
 
     let today = new Date();
