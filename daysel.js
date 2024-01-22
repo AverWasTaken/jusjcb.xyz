@@ -29,7 +29,7 @@ function updateDay() {
         let dayType = diffDays % 2 === 0 ? 'B' : 'A';
 
         if (daySpan && pDay) {
-            pDay.innerHTML = `Today is A, <span class="day sel">${dayType} day</span>`;
+            pDay.innerHTML = `Today is a, <span class="day sel">${dayType} day</span>`;
         }
     }
 }
