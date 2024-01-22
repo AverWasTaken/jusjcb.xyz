@@ -130,7 +130,7 @@ html, body{
     }
 
     .time{
-        font-size: 1.8vh;
+        font-size: 3.2vh;
         padding: 6%;
         word-wrap: break-word;
         text-align: center;
@@ -148,3 +148,11 @@ html, body{
         margin-top: 10%;
     }
 }
+
+@media screen and (max-height: 898px) {
+    .content-area{
+        margin-top: 10%;
+    }
+}
+
+
