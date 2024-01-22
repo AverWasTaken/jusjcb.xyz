@@ -1,21 +1,21 @@
 linebreak = document.createElement("br");
 function updatePeriod() {
     const regularSchedule = [
-        { start: '7:00', end: '7:55', period: 'Early Bird' },
-        { start: '8:05', end: '9:25', period: '1st Period ' },
-        { start: '9:30', end: '10:50', period: '2nd Period ' },
-        { start: '10:50', end: '11:25', period: 'Bulldog Time' },
-        { start: '11:25', end: '12:05', period: 'Lunch' },
-        { start: '12:05', end: '1:25', period: '3rd Period ' },
-        { start: '1:30', end: '2:50', period: '4th Period ' }
+        { start: '7:00AM', end: '7:55AM', period: 'Early Bird' },
+        { start: '8:05AM', end: '9:25AM', period: '1st Period ' },
+        { start: '9:30AM', end: '10:50AM', period: '2nd Period ' },
+        { start: '10:50AM', end: '11:25AM', period: 'Bulldog Time' },
+        { start: '11:25AM', end: '12:05PM', period: 'Lunch' },
+        { start: '12:05PM', end: '1:25PM', period: '3rd Period ' },
+        { start: '1:30PM', end: '2:50PM', period: '4th Period ' }
     ];
     const earlyReleaseSchedule = [
-        { start: '7:00', end: '7:55', period: 'Early Bird' },
-        { start: '8:05', end: '9:18', period: '1st Period ' },
-        { start: '9:23', end: '10:39', period: '2nd Period ' },
-        { start: '10:44', end: '11:57', period: '3rd Period ' },
-        { start: '11:57', end: '12:37', period: 'Lunch' },
-        { start: '12:37', end: '1:50', period: '4th Period ' }
+        { start: '7:00AM', end: '7:55AM', period: 'Early Bird' },
+        { start: '8:05AM', end: '9:18AM', period: '1st Period ' },
+        { start: '9:23AM', end: '10:39AM', period: '2nd Period ' },
+        { start: '10:44AM', end: '11:57AM', period: '3rd Period ' },
+        { start: '11:57AM', end: '12:37PM', period: 'Lunch' },
+        { start: '12:37PM', end: '1:50PM', period: '4th Period ' }
     ];
 
     const parseTime = (timeStr) => {
