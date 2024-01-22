@@ -39,22 +39,15 @@
                 <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
         
                 <script>
-                    function shuffleArray(array) {
-                        for (let i = array.length - 1; i > 0; i--) {
-                            const j = Math.floor(Math.random() * (i + 1));
-                            [array[i], array[j]] = [array[j], array[i]];
-                        }
-                    }
-                
                     const words = [
                     'a developer.',
-                    'a gamer.',
                     'a creator.',
                     'an ai enthusiast.',
-                    'a cool guy.',
-                    'not your mom.',
                     'certified in html.',
                     'certified in css.',
+                    'a gamer.',
+                    'a cool guy.',
+                    'not your mom.',
                     'a valorant player.',
                     'not your dad.',
                     'confused sometimes.',
@@ -82,8 +75,7 @@
                     'a unicorn whisperer.',
                     'a future millionaire.',
                     'a pretend adult.',
-                    'a wizard harry.',];
-                    shuffleArray(words); 
+                    'a wizard harry.'];
                 
                     var typed = new Typed('#typing', {
                         strings: words,
@@ -96,11 +88,11 @@
                         cursorChar: '|',
                     });
                 </script>
-        
-                <!--<div class="interract">
-                    <img src="content/instagram.png" class="insta">
-                    </div>-->
-            
+
+                <div class="social">
+                    <a href="https://www.instagram.com/jus.jcb/" target="_blank"><img src="content/Instagram.png" class="insta"></a>
+                    <a href="https://github.com/AverWasTaken" target="_blank"><img src="content/social-media.png" class="github"></a>
+                </div>
         </div>
     </body>
 </html>
