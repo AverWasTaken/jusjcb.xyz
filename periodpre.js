@@ -1,3 +1,4 @@
+linebreak = document.createElement("br");
 function updatePeriod() {
     const regularSchedule = [
         { start: '7:00', end: '7:55', period: 'Early Bird' },
@@ -61,9 +62,9 @@ function updatePeriod() {
             return `Awh, Lunch ends in ${remainingTime}. :(`;
         } else {
             const nextPeriodMessage = isPeriodBeforeLunch(currentPeriod, schedule.indexOf(currentPeriod), schedule)
-                ? ' Lunch is next!'
+                ? ' <br><span style="display:block; margin-top: 10px;">Lunch is next!'
                 : '';
-            return `Looks like you're in ${currentPeriod.period}. It will end in ${remainingTime}.${nextPeriodMessage}`;
+            return `Looks like you're in ${currentPeriod.period}.<br><span style="display: block; margin-top: 10px;"></span>Time Remaining - ${remainingTime}.${nextPeriodMessage}`;
         }
     };
 
@@ -71,8 +72,8 @@ function updatePeriod() {
     const schoolStartOrWeekendMessage = timeUntilSchoolOrWeekendMessage();
     const contentArea = document.querySelector('.content-area p');
     if (schoolStartOrWeekendMessage) {
-        contentArea.textContent = schoolStartOrWeekendMessage;
-        return; // Exit the function early as no further checks are needed
+        contentArea.innerHTML = schoolStartOrWeekendMessage;
+        return;
     }
 
     // Determine if it's a regular day or early release (Friday)
@@ -90,7 +91,7 @@ function updatePeriod() {
 
     if (currentPeriod) {
         const remainingTime = formatRemainingTime(parseTime(currentPeriod.end));
-        contentArea.textContent = generateMessage(currentPeriod, remainingTime);
+        contentArea.innerHTML = generateMessage(currentPeriod, remainingTime);
     } else {
         // If it's not within any period, check if we are approaching lunch
         const nextPeriod = schedule.find(slot => currentTime < parseTime(slot.start));
