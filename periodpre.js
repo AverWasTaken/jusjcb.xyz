@@ -57,7 +57,7 @@ function updatePeriod() {
     const contentArea = document.querySelector('.content-area p');
     if (currentPeriod) {
         const remainingTime = formatRemainingTime(parseTime(currentPeriod.end));
-        contentArea.innerHTML = `You're in ${currentPeriod.period}. Time Remaining - ${remainingTime}.`;
+        contentArea.innerHTML = `You're in ${currentPeriod.period}.<br> Time Remaining - ${remainingTime}.`;
     } else {
         contentArea.textContent = 'You\'re currently outside of school hours, or in a passing period.';
     }
