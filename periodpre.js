@@ -98,7 +98,7 @@ function updatePeriod() {
             const remainingTimeToLunch = formatRemainingTime(parseTime(nextPeriod.start));
             contentArea.textContent = `Yay! Your period ends in ${remainingTimeToLunch}, Lunch is next!`;
         } else {
-            contentArea.textContent = `You're currently outside of school hours.`;
+            contentArea.textContent = `You're currently outside of school hours, or in a passing period.`;
         }
     }
 }
