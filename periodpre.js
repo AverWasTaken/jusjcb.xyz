@@ -5,7 +5,7 @@ function updatePeriod() {
         { start: '9:30AM', end: '10:50AM', period: '2nd Period ' },
         { start: '10:50AM', end: '11:25AM', period: 'Bulldog Time' },
         { start: '11:25AM', end: '12:05PM', period: 'Lunch' },
-        { start: '12:05AM', end: '1:25PM', period: '3rd Period ' },
+        { start: '12:05PM', end: '1:25PM', period: '3rd Period ' },
         { start: '1:30PM', end: '2:50PM', period: '4th Period ' }
     ];
     const earlyReleaseSchedule = [
