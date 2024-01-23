@@ -91,10 +91,19 @@ ul{
 
 .period{
     font-size: 20pt;
+    text-decoration: underline;
 }
 
 .time{
     white-space: nowrap;
+    transform: translateY(5px);
+    text-decoration: underline ;
+}
+
+.start{
+    font-family: Mont;
+    color: white;
+    text-align: center;
 }
 
 
