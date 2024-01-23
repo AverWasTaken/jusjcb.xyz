@@ -123,7 +123,7 @@ function updatePeriod() {
     } else if (currentPeriod) {
         const remainingTime = formatRemainingTime(parseTime(currentPeriod.end));
         periodContentArea.textContent = `${currentPeriod.period}`;
-        timeLeftContentArea.textContent = `Time Remaining - ${remainingTime}`;
+        timeLeftContentArea.textContent = `${remainingTime}`;
     } else {
         periodContentArea.textContent = 'Out Of School';
         timeLeftContentArea.textContent = 'Out Of School';
