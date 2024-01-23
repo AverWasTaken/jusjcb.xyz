@@ -28,9 +28,6 @@
     to { opacity: 1; }
 }
   
-.fade-in {
-    animation: fadeIn 2s ease;
-}
 
 html, body{
     background-image: url(content/shsbackground.png);
@@ -42,117 +39,113 @@ html, body{
     overflow-x: hidden; 
 }
 
-.top-area{
-    background-color: rgba(255, 0, 0, 0.439);
-    box-shadow: red 0 0 50px;
-    border-radius: 50px;
-    width: 60%;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3%;
-    transition: ease 0.2s;
+.headercontainer{
+    max-width: 29%;
+    width: auto;
+    height: auto;
+    background-color: rgb(210, 40, 40);
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 2px;
+    box-shadow: rgb(255, 255, 255) 0 0 30px;
+    display: inline-block;
 }
 
-.content-area{
-    background-color: rgba(255, 0, 0, 0.439);
-    box-shadow: red 0 0 50px;
-    width: 30%;
-    border-radius: 50px;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 6%;
-    border-style: solid;
-    border-color: white;
+.infobox{
+    background-color: rgb(210, 40, 40);
+    max-width: 20%;
+    width: auto;
+    height: 400px;
+    margin-top: 15%;
+    border-radius: 20px;
+    margin-left: 1%;
+    display: block;
 }
 
+.welcome{
+    color: white;
+    font-family: Mont;
+    font-size: 39pt;
+    margin-top: 0;
+    padding: 20px;
+    word-wrap: break-word;
+}
+
+.header{
+    color: white;
+    text-align: center;
+    font-family: VCS-B;
+    padding: 3%;
+}
+
+ul{
+    font-family: Mont;
+    color: white;
+    font-size: 20pt;
+    line-height: 280%;
+}
 
 .day{
-    font-size: 2vh;
-    text-align: center;
-    font-family: VCS-I-L;
+    text-decoration: underline;
+}
+
+.period{
+    font-size: 20pt;
+    text-decoration: underline;
 }
 
 .time{
+    white-space: nowrap;
+    transform: translateY(5px);
+    text-decoration: underline ;
+}
+
+.start{
+    font-family: Mont;
     color: white;
-    font-family: 'VCS-I-B';
-    font-size: 2vh;
-    margin-bottom: 5%;
-    text-decoration: underline;
     text-align: center;
-    padding: 5%;
 }
 
 
-.top-area:hover{
-    box-shadow: red 0 0 100px;   
-}
-
-.welc{
-    font-family: VCS-B;
-    color: white;
-    font-size: 6vh;
-}
-
-@media screen and (max-width: 768px) {
-
-    .top-area{
-        width: 80%;
-    }
-    .welc{
-        margin-bottom: 2%;
-        font-size: 3.9vh;
+@media screen and (max-device-width: 480px) and (orientation:portrait) {
+    .headercontainer{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        border-radius: 20px;
+        max-width: 60%;
         text-align: center;
-        padding: 7%;
+        margin-top: 10%;
     }
 
-    .top-area{
-        width: 100%;
-        height: 100px;
-        border-radius: 10px;
-        margin-top: 0%;
-        box-shadow: red 0 10px 80px;
+    .infobox{
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90%;
     }
 
-    .content-area{
-        width: 90%;
-        margin-top: 50%;
-        height: auto;
+    .day {
+        font-size: 15pt;
+    }
+
+    .period{
+        font-size: 15pt;
     }
 
     .time{
-        font-size: 3.2vh;
-        padding: 6%;
-        word-wrap: break-word;
+        font-size: 15pt;
+    }
+
+    .welcome{
+        font-size: 30pt;
+    }
+
+    .start{
+        font-family: Mont;
+        color: white;
         text-align: center;
     }
-}
+} 
 
-@media screen and (max-height: 932px) {
-    .content-area{
-        margin-top: 70%;
-    }
-}
-
-@media screen and (max-height: 600px) {
-    .content-area{
-        margin-top: 10%;
-    }
-}
-
-@media screen and (max-height: 898px) {
-    .content-area{
-        margin-top: 10%;
-    }
-}
 
 
