@@ -53,9 +53,9 @@ html, body{
 
 .infobox{
     background-color: rgb(210, 40, 40);
-    max-width: 20%;
+    max-width: fit-content;
     width: auto;
-    height: 400px;
+    height: auto;
     margin-top: 15%;
     border-radius: 20px;
     margin-left: 1%;
@@ -76,6 +76,7 @@ html, body{
     text-align: center;
     font-family: VCS-B;
     padding: 3%;
+    word-wrap: break-word;
 }
 
 ul{
