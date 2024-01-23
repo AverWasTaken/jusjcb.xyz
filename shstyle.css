@@ -45,10 +45,10 @@ html, body{
     height: auto;
     background-color: rgb(210, 40, 40);
     border-bottom-right-radius: 20px;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 2px;
+    border-radius: 5px;
     box-shadow: rgb(255, 255, 255) 0 0 30px;
-    display: inline-block;
+    margin-left:  auto;
+    margin-right: auto;
 }
 
 .infobox{
@@ -59,7 +59,9 @@ html, body{
     margin-top: 15%;
     border-radius: 20px;
     margin-left: 1%;
-    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 .welcome{
