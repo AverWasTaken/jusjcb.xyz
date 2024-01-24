@@ -122,6 +122,32 @@ li{
     text-decoration: underline;
 }
 
+.qr{
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    border-width: 10px;
+    box-shadow: white 0 0 20px;
+}
+
+.qrtxt{
+    font-family: Mont;
+    color: white;
+    font-size: 30pt;
+}
+
+.code{
+    float: right;
+    display: block;
+    width: 200px;
+    height: 200px;
+    transform: translateY(-250px);
+    padding-right: 8%;
+    
+}
+
 
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
     .headercontainer{
@@ -174,6 +200,21 @@ li{
         line-height: 430%;
     }
 
+    .qr{
+        width: 0px;
+        height: 0px;
+        border-radius: 0px;
+        border-color: transparent;
+        box-shadow: transparent 0 0 0;
+    }
 
+    .qrtxt{
+        font-size: 0px;
+    }
+
+    .code{
+        width: 0px;
+        height: 0px;
+    }
 
 }
