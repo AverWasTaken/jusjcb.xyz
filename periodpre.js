@@ -19,14 +19,20 @@ function parseTime(timeStr) {
 // Helper function to format remaining time
 function formatRemainingTime(endMoment) {
     const now = moment();
+    console.log(`Current Time: ${now.format('hh:mm:ss A')}`);
+    console.log(`End Time: ${endMoment.format('hh:mm:ss A')}`);
+
     let diff = endMoment.diff(now);
+    console.log(`Time Difference (ms): ${diff}`);
 
     const hours = Math.floor(diff / (1000 * 60 * 60));
     diff -= hours * 1000 * 60 * 60;
     const minutes = Math.floor(diff / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    return `${hours > 0 ? `${hours}H ` : ''}${minutes}M & ${seconds}S`;
+    const formattedTime = `${hours > 0 ? `${hours}H ` : ''}${minutes}M & ${seconds}S`;
+    console.log(`Formatted Time Left: ${formattedTime}`);
+    return formattedTime;
 }
 
 const scheduleData = {
@@ -73,7 +79,6 @@ function getCurrentPeriod(schedule) {
 }
 
 // Fetch and update the schedule
-var x = window.matchMedia("(max-device-width: 480px)")
 async function updateSchedule() {
     try {
         const now = new Date();
@@ -87,7 +92,7 @@ async function updateSchedule() {
         const periodContentArea = document.querySelector('.period');
         const timeLeftContentArea = document.querySelector('.time');
         console.log(`Current Period: ${currentPeriod ? currentPeriod.period : 'None'}`);
-
+        console.log(`Debug: Current period is ${currentPeriod ? currentPeriod.period : 'none'}, Remaining time is ${currentPeriod ? currentPeriod.remainingTime : 'none'}`);
         if (isWeekend) {
             schoolStartContentArea.innerHTML = 'Enjoy Your Weekend!';
             periodContentArea.innerHTML = 'Enjoy Your Weekend!';
@@ -95,23 +100,12 @@ async function updateSchedule() {
         } else if (currentPeriod) {
             schoolStartContentArea.innerHTML = `Make It A Good One!`;
             periodContentArea.innerHTML = `${currentPeriod.period}`;
-            timeLeftContentArea.innerHTML = `${currentPeriod.remainingTime}`;
+            timeLeftContentArea.innerHTML = `${currentPeriod.remainingTime}`; 
         } else {
             schoolStartContentArea.innerHTML = 'School is Over';
-            periodContentArea.innerHTML = 'Enjoy Your Day!';
-            timeLeftContentArea.innerHTML = 'Enjoy Your Day!';
+            periodContentArea.innerHTML = 'Day Over.';
+            timeLeftContentArea.innerHTML = 'Day Over.';
         }
-
-        function deviceMobile(x) {
-            if (x.matches) {
-                schoolStartContentArea.innerHTML = ``;
-                periodContentArea.innerHTML = 'Day Over';
-                timeLeftContentArea.innerHTML = 'Day Over';
-            } else {
-                timeLeftContentArea.innerHTML = 'Enjoy Your Day!';  
-            }
-          }
-          deviceMobile(x);
 
     } catch (error) {
         console.error('Error updating schedule:', error);
