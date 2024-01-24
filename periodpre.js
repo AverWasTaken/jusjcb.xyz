@@ -40,7 +40,7 @@ const scheduleData = {
         { "start": "7:00AM", "end": "7:55AM", "period": "Early Bird" },
         { "start": "8:05AM", "end": "9:25AM", "period": "1st Period" },
         { "start": "9:30AM", "end": "10:50AM", "period": "2nd Period" },
-        { "start": "10:50AM", "end": "11:25AM", "period": "Bulldog Time" },
+        { "start": "10:55AM", "end": "11:25AM", "period": "Bulldog Time" },
         { "start": "11:25AM", "end": "12:00PM", "period": "Lunch" },
         { "start": "12:05PM", "end": "1:25PM", "period": "3rd Period" },
         { "start": "1:30PM", "end": "2:50PM", "period": "4th Period" }
