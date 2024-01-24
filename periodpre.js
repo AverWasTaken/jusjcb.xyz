@@ -76,7 +76,7 @@ async function updateSchedule() {
             if (x.matches) {
                 schoolStartContentArea.innerHTML = ``;
                 periodContentArea.innerHTML = 'Day Over';
-                timeLeftContentArea.innerHTML = '1H 40M & 38S';
+                timeLeftContentArea.innerHTML = 'Day Over';
             } else {
                 timeLeftContentArea.innerHTML = 'Enjoy Your Day!';  
             }
