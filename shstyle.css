@@ -197,8 +197,6 @@ li{
         font-size: 30pt;
     }
 
-    
-
     li{
         font-size: 20pt;
         line-height: 400%;
@@ -210,6 +208,7 @@ li{
         border-radius: 0px;
         border-color: transparent;
         box-shadow: transparent 0 0 0;
+        opacity: 0;
     }
 
     .qrtxt{
