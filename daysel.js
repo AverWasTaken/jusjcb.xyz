@@ -23,7 +23,7 @@ function updateDay() {
     } else {
         
         if (daySpan) {
-            daySpan.innerHTML = `<span class="day">${dayType} day</span>`;
+            daySpan.innerHTML = `<span class="day">${dayType} Day</span>`;
         }
     }
 }
