@@ -74,8 +74,9 @@ async function updateSchedule() {
 
         function deviceMobile(x) {
             if (x.matches) {
+                schoolStartContentArea.innerHTML = ``;
                 periodContentArea.innerHTML = 'Day Over';
-                timeLeftContentArea.innerHTML = 'Day Over';
+                timeLeftContentArea.innerHTML = '1H 40M & 38S';
             } else {
                 timeLeftContentArea.innerHTML = 'Enjoy Your Day!';  
             }
