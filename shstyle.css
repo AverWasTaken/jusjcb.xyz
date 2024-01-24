@@ -201,19 +201,19 @@ li{
     }
 
     .day {
-        font-size: 25pt;
+        font-size: 15pt;
     }
 
     .period{
-        font-size: 25pt;
+        font-size: 15pt;
     }
 
     .time{
-        font-size: 25pt;
+        font-size: 15pt;
     }
 
     .bt{
-        font-size: 25pt;
+        font-size: 15pt;
     }
 
     .welcome{
@@ -224,7 +224,7 @@ li{
         font-family: Mont;
         color: white;
         text-align: center;
-        font-size: 30pt;
+        font-size: 15pt;
     }
 
     ul{
@@ -233,7 +233,7 @@ li{
 
     li{
         font-size: 20pt;
-        line-height: 400%;
+        line-height: 260%;
     }
 
     .qr{
@@ -298,13 +298,14 @@ li{
 
     li{
         font-size: 20pt;
+        line-height: 50%;
     }
     .day {
-        font-size: 20pt;
+        font-size: 15pt;
     }
 
     .period{
-        font-size: 20pt;
+        font-size: 15pt;
     }
 
     .time{
@@ -312,18 +313,18 @@ li{
     }
 
     .bt{
-        font-size: 20pt;
+        font-size: 15pt;
     }
 
     .welcome{
-        font-size: 20pt;
+        font-size: 15pt;
     }
 
     .start{
         font-family: Mont;
         color: white;
         text-align: center;
-        font-size: 30pt;
+        font-size: 15pt;
     }
 
     .txt{
