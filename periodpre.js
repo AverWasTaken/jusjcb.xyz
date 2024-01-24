@@ -93,7 +93,7 @@ async function updateSchedule() {
             periodContentArea.innerHTML = 'Enjoy Your Weekend!';
             timeLeftContentArea.innerHTML = '';
         } else if (currentPeriod) {
-            schoolStartContentArea.innerHTML = `School Remaining (${currentPeriod.remainingTime})`;
+            schoolStartContentArea.innerHTML = `Make It A Good One!`;
             periodContentArea.innerHTML = `${currentPeriod.period}`;
             timeLeftContentArea.innerHTML = `${currentPeriod.remainingTime}`;
         } else {
