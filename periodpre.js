@@ -1,134 +1,101 @@
+// Helper function to parse time strings
+function parseTime(timeStr) {
+    const [time, modifier] = timeStr.split(/(AM|PM)/);
+    return new Date(`01/01/2000 ${time} ${modifier}`);
+}
 
-function updatePeriod() {
-    const regularSchedule = [
-        { start: '7:00AM', end: '7:55AM', period: 'Early Bird' },
-        { start: '8:05AM', end: '9:25AM', period: '1st Period ' },
-        { start: '9:30AM', end: '10:50AM', period: '2nd Period ' },
-        { start: '10:50AM', end: '11:25AM', period: 'Bulldog Time' },
-        { start: '11:25AM', end: '12:05PM', period: 'Lunch' },
-        { start: '12:05PM', end: '1:25PM', period: '3rd Period ' },
-        { start: '1:30PM', end: '2:50PM', period: '4th Period ' }
-    ];
-    const earlyReleaseSchedule = [
-        { start: '7:00AM', end: '7:55AM', period: 'Early Bird' },
-        { start: '8:05AM', end: '9:18AM', period: '1st Period ' },
-        { start: '9:23AM', end: '10:39AM', period: '2nd Period ' },
-        { start: '10:44AM', end: '11:57AM', period: '3rd Period ' },
-        { start: '11:57AM', end: '12:37PM', period: 'Lunch' },
-        { start: '12:37PM', end: '1:50PM', period: '4th Period ' }
-    ];
-
-    const parseTime = (timeStr) => {
-        const [hours, minutesPart] = timeStr.split(':');
-        let hoursInt = parseInt(hours, 10);
-        const minutes = parseInt(minutesPart, 10);
-
-        // Adjust for PM times
-        if (timeStr.includes('PM') && hoursInt < 12) {
-            hoursInt += 12;
-        } else if (timeStr.includes('AM') && hoursInt === 12) {
-            hoursInt = 0;
-        }
-
-        const time = new Date();
-        time.setHours(hoursInt, minutes, 0, 0);
-        return time;
-    };
-    
-    function calculateSchoolStartTime(schedule) {
-        const now = new Date();
-        const firstPeriodStart = parseTime(schedule[0].start);
-        
-        if (now < firstPeriodStart) {
-            return formatRemainingTime(firstPeriodStart);
-        } else {
-            return null; // Indicates that the school has already started
-        }
-    }
-    
-    function timeUntilEndOfSchool(schedule) {
-        const now = new Date();
-        const lastPeriod = schedule[schedule.length - 1];
-        const endOfSchool = parseTime(lastPeriod.end);
-    
-        if (now < endOfSchool) {
-            return formatRemainingTime(endOfSchool);
-        } else {
-            return null; // Indicates that the school day has ended
-        }
-    }
-
-    const formatRemainingTime = (endDate) => {
-        const now = new Date();
-        let diff = endDate - now;
-    
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        diff -= hours * 1000 * 60 * 60;
-        const minutes = Math.floor(diff / (1000 * 60));
-        diff -= minutes * 1000 * 60;
-        const seconds = Math.floor(diff / 1000);
-    
-        let timeString = "";
-        if (hours > 0) {
-            timeString += `${hours}H `;
-        }
-        timeString += `${minutes}M & ${seconds}S`;
-    
-        return timeString;
-    };
+// Helper function to format remaining time
+function formatRemainingTime(endDate) {
     const now = new Date();
-    const isWeekend = now.getDay() === 0 || now.getDay() === 6;
-    const isEarlyRelease = now.getDay() === 5;
-    const schedule = isEarlyRelease ? earlyReleaseSchedule : regularSchedule;
-    const schoolStartContentArea = document.querySelector('.start');
-    const schoolStartTime = calculateSchoolStartTime(schedule);
-    const endTimeContent = timeUntilEndOfSchool(schedule);
+    let diff = endDate.getTime() - now.getTime();
 
-    if (isWeekend) {
-        schoolStartContentArea.textContent = 'Enjoy the Weekend!';
-    } else if (schoolStartTime) {
-        schoolStartContentArea.textContent = `School Starts In ${schoolStartTime}`;
-    } else if (endTimeContent) {
-        schoolStartContentArea.textContent = `School Ends In ${endTimeContent}`;
-    } else {
-        schoolStartContentArea.textContent = 'School is Over for Today';
-    }
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    diff -= hours * 1000 * 60 * 60;
+    const minutes = Math.floor(diff / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    // Check if it's a passing period or out of school
+    return `${hours > 0 ? `${hours}H ` : ''}${minutes}M & ${seconds}S`;
+}
+
+// Determine the current period
+function getCurrentPeriod(schedule) {
+    const now = new Date();
     for (let i = 0; i < schedule.length; i++) {
-        const periodStart = parseTime(schedule[i].start);
-        const periodEnd = parseTime(schedule[i].end);
-        const nextPeriodStart = i < schedule.length - 1 ? parseTime(schedule[i + 1].start) : null;
+        const period = schedule[i];
+        const start = parseTime(period.start);
+        const end = parseTime(period.end);
 
-        if (now >= periodEnd && nextPeriodStart && now < nextPeriodStart) {
-            // Within a passing period (5 minutes after the end of a period)
-            currentPeriod = { period: 'Passing Period', end: nextPeriodStart.toTimeString() };
-            break;
-        } else if (now >= periodStart && now < periodEnd) {
-            // Within a scheduled period
-            currentPeriod = schedule[i];
-            break;
+        if (now >= start && now < end) {
+            return { ...period, remainingTime: formatRemainingTime(end) };
+        }
+
+        if (i < schedule.length - 1) {
+            const nextPeriodStart = parseTime(schedule[i + 1].start);
+            const passingPeriodEnd = new Date(end.getTime() + 5 * 60000);
+            if (now >= end && now < passingPeriodEnd) {
+                return { period: 'Passing Period', remainingTime: formatRemainingTime(nextPeriodStart) };
+            }
         }
     }
+    return null;
+}
 
+// Fetch and update the schedule
+var x = window.matchMedia("(max-device-width: 480px)")
+async function updateSchedule() {
+    try {
+        const response = await fetch('schedule.json');
+        const scheduleData = await response.json();
 
-    // Define content areas
-    const periodContentArea = document.querySelector('.period');
-    const timeLeftContentArea = document.querySelector('.time');
+        const now = new Date();
+        const isWeekend = now.getDay() === 0 || now.getDay() === 6;
+        const isEarlyRelease = now.getDay() === 5;
+        const schedule = isEarlyRelease ? scheduleData.earlyReleaseSchedule : scheduleData.regularSchedule;
 
-    // Update content based on current period or time of day
-    if (isWeekend) {
-        periodContentArea.textContent = 'Yay! The weekend!';
-        timeLeftContentArea.textContent = '';
-    } else if (currentPeriod) {
-        const remainingTime = formatRemainingTime(parseTime(currentPeriod.end));
-        periodContentArea.textContent = `${currentPeriod.period}`;
-        timeLeftContentArea.textContent = `${remainingTime}`;
-    } else {
-        periodContentArea.textContent = 'Out Of School';
-        timeLeftContentArea.textContent = 'Out Of School';
+        const currentPeriod = getCurrentPeriod(schedule);
+
+        const schoolStartContentArea = document.querySelector('.start');
+        const periodContentArea = document.querySelector('.period');
+        const timeLeftContentArea = document.querySelector('.time');
+
+        if (isWeekend) {
+            schoolStartContentArea.innerHTML = 'Enjoy Your Weekend!';
+            periodContentArea.innerHTML = 'Enjoy Your Weekend!';
+            timeLeftContentArea.innerHTML = '';
+        } else if (currentPeriod) {
+            schoolStartContentArea.innerHTML = `School Remaining (${currentPeriod.remainingTime})`;
+            periodContentArea.innerHTML = `${currentPeriod.period}`;
+            timeLeftContentArea.innerHTML = `${currentPeriod.remainingTime}`;
+        } else {
+            schoolStartContentArea.innerHTML = 'School is Over';
+            periodContentArea.innerHTML = 'Enjoy Your Day!';
+            timeLeftContentArea.innerHTML = 'Enjoy Your Day!';
+        }
+
+        function deviceMobile(x) {
+            if (x.matches) {
+                periodContentArea.innerHTML = 'Day Over';
+                timeLeftContentArea.innerHTML = 'Day Over';
+            } else {
+                timeLeftContentArea.innerHTML = 'Enjoy Your Day!';  
+            }
+          }
+          deviceMobile(x);
+
+    } catch (error) {
+        console.error('Error updating schedule:', error);
     }
 }
 
-window.addEventListener('load', updatePeriod);
-setInterval(updatePeriod, 1000); // Update every second
+function refreshPage() {
+    setTimeout(() => {
+        window.location.reload();
+    }, 30 * 60 * 1000); // 30 minutes in milliseconds
+}
+
+
+window.addEventListener('load', () => {
+    updateSchedule();
+    setInterval(updateSchedule, 1000);
+    refreshPage(); // Call the refresh function
+});
