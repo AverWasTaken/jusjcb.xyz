@@ -90,12 +90,12 @@ ul{
     font-family: Mont;
     color: white;
     font-size: 20pt;
-    line-height: 280%;
+    line-height: 450%;
     display: inline-block;
     text-align: left;
 }
 
-.li{
+li{
     font-size: 50pt;
 }
 
@@ -104,7 +104,7 @@ ul{
 }
 
 .period{
-    font-size: 50pt;
+    font-size: 40pt;
     text-decoration: underline;
 }
 
@@ -119,6 +119,7 @@ ul{
     color: white;
     font-size: 70px;
     display: inline-block;
+    text-decoration: underline;
 }
 
 
@@ -133,6 +134,10 @@ ul{
         margin-top: 10%;
     }
 
+    .header{
+        font-size: 40pt;
+    }
+
     .infobox{
         margin-left: auto;
         margin-right: auto;
@@ -140,27 +145,35 @@ ul{
     }
 
     .day {
-        font-size: 15pt;
+        font-size: 25pt;
     }
 
     .period{
-        font-size: 15pt;
+        font-size: 25pt;
     }
 
     .time{
-        font-size: 15pt;
+        font-size: 25pt;
     }
 
     .welcome{
-        font-size: 30pt;
+        font-size: 15pt;
     }
 
     .start{
         font-family: Mont;
         color: white;
         text-align: center;
+        font-size: 30pt;
     }
-} 
+
+    
+
+    li{
+        font-size: 25pt;
+        line-height: 430%;
+    }
 
 
 
+}
