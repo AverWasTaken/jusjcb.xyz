@@ -114,6 +114,10 @@ li{
     text-decoration: underline ;
 }
 
+.bt{
+    text-decoration: underline ;
+}
+
 .start{
     font-family: Mont;
     color: white;
@@ -160,7 +164,7 @@ li{
 .txt{
     font-family: VCS-I-B;
     color: white;
-    font-size: 20pt;
+    font-size: 24pt;
 }
 
 
