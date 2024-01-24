@@ -1,13 +1,25 @@
 // Helper function to parse time strings
 function parseTime(timeStr) {
-    const [time, modifier] = timeStr.split(/(AM|PM)/);
-    return new Date(`01/01/2000 ${time} ${modifier}`);
+    // Assuming the current date, format the time string to a Moment object
+    const currentTime = moment();
+    const timeComponents = timeStr.match(/(\d+):(\d+)(AM|PM)/);
+
+    if (timeComponents) {
+        const hours = timeComponents[1];
+        const minutes = timeComponents[2];
+        const modifier = timeComponents[3];
+
+        return currentTime.clone().hour(hours).minute(minutes).second(0).millisecond(0).add(modifier === 'PM' && hours !== '12' ? 12 : 0, 'hours');
+    } else {
+        console.error(`Invalid time format: ${timeStr}`);
+        return null;
+    }
 }
 
 // Helper function to format remaining time
-function formatRemainingTime(endDate) {
-    const now = new Date();
-    let diff = endDate.getTime() - now.getTime();
+function formatRemainingTime(endMoment) {
+    const now = moment();
+    let diff = endMoment.diff(now);
 
     const hours = Math.floor(diff / (1000 * 60 * 60));
     diff -= hours * 1000 * 60 * 60;
@@ -17,22 +29,42 @@ function formatRemainingTime(endDate) {
     return `${hours > 0 ? `${hours}H ` : ''}${minutes}M & ${seconds}S`;
 }
 
+const scheduleData = {
+    "regularSchedule": [
+        { "start": "7:00AM", "end": "7:55AM", "period": "Early Bird" },
+        { "start": "8:05AM", "end": "9:25AM", "period": "1st Period" },
+        { "start": "9:30AM", "end": "10:50AM", "period": "2nd Period" },
+        { "start": "10:50AM", "end": "11:25AM", "period": "Bulldog Time" },
+        { "start": "11:25AM", "end": "12:00PM", "period": "Lunch" },
+        { "start": "12:05PM", "end": "1:25PM", "period": "3rd Period" },
+        { "start": "1:30PM", "end": "2:50PM", "period": "4th Period" }
+    ],
+    "earlyReleaseSchedule": [
+        { "start": "7:00AM", "end": "7:55AM", "period": "Early Bird" },
+        { "start": "8:05AM", "end": "9:18AM", "period": "1st Period" },
+        { "start": "9:23AM", "end": "10:39AM", "period": "2nd Period" },
+        { "start": "10:44AM", "end": "11:57AM", "period": "3rd Period" },
+        { "start": "11:57AM", "end": "12:37PM", "period": "Lunch" },
+        { "start": "12:37PM", "end": "1:50PM", "period": "4th Period" }
+    ]
+};
+
 // Determine the current period
 function getCurrentPeriod(schedule) {
-    const now = new Date();
+    const now = moment();
     for (let i = 0; i < schedule.length; i++) {
         const period = schedule[i];
         const start = parseTime(period.start);
         const end = parseTime(period.end);
 
-        if (now >= start && now < end) {
+        if (now.isSameOrAfter(start) && now.isBefore(end)) {
             return { ...period, remainingTime: formatRemainingTime(end) };
         }
 
         if (i < schedule.length - 1) {
             const nextPeriodStart = parseTime(schedule[i + 1].start);
-            const passingPeriodEnd = new Date(end.getTime() + 5 * 60000);
-            if (now >= end && now < passingPeriodEnd) {
+            const passingPeriodEnd = end.clone().add(5, 'minutes');
+            if (now.isSameOrAfter(end) && now.isBefore(passingPeriodEnd)) {
                 return { period: 'Passing Period', remainingTime: formatRemainingTime(nextPeriodStart) };
             }
         }
@@ -44,9 +76,6 @@ function getCurrentPeriod(schedule) {
 var x = window.matchMedia("(max-device-width: 480px)")
 async function updateSchedule() {
     try {
-        const response = await fetch('schedule.json');
-        const scheduleData = await response.json();
-
         const now = new Date();
         const isWeekend = now.getDay() === 0 || now.getDay() === 6;
         const isEarlyRelease = now.getDay() === 5;
@@ -57,6 +86,7 @@ async function updateSchedule() {
         const schoolStartContentArea = document.querySelector('.start');
         const periodContentArea = document.querySelector('.period');
         const timeLeftContentArea = document.querySelector('.time');
+        console.log(`Current Period: ${currentPeriod ? currentPeriod.period : 'None'}`);
 
         if (isWeekend) {
             schoolStartContentArea.innerHTML = 'Enjoy Your Weekend!';
@@ -87,6 +117,7 @@ async function updateSchedule() {
         console.error('Error updating schedule:', error);
     }
 }
+
 
 function refreshPage() {
     setTimeout(() => {
