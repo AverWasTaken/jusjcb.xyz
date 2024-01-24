@@ -182,6 +182,10 @@ li{
         font-size: 25pt;
     }
 
+    .bt{
+        font-size: 25pt;
+    }
+
     .welcome{
         font-size: 15pt;
     }
@@ -196,8 +200,8 @@ li{
     
 
     li{
-        font-size: 25pt;
-        line-height: 430%;
+        font-size: 20pt;
+        line-height: 400%;
     }
 
     .qr{
