@@ -168,6 +168,7 @@ li{
         margin-left: auto;
         margin-right: auto;
         max-width: 90%;
+        height: 40%;
     }
 
     .day {
@@ -197,6 +198,10 @@ li{
         font-size: 30pt;
     }
 
+    ul{
+        transform: translateY(-20%);
+    }
+
     li{
         font-size: 20pt;
         line-height: 400%;
@@ -220,4 +225,82 @@ li{
         height: 0px;
     }
 
+}
+
+@media screen and (max-device-width: 412px) and (orientation:portrait) {
+    .time{
+        font-size: 17pt;
+    }
+}
+
+@media screen and (max-device-width: 414px) and (orientation:portrait) {
+    .time{
+        font-size: 17pt;
+    }
+}
+
+@media screen and (max-device-width: 360px) and (orientation:portrait) {
+
+    .headercontainer{
+        max-width: 82%;
+    }
+
+    .infobox{
+        height: 580px;
+    }
+
+    li{
+        font-size: 20pt;
+    }
+    .day {
+        font-size: 20pt;
+    }
+
+    .period{
+        font-size: 20pt;
+    }
+
+    .time{
+        font-size: 13pt;
+    }
+
+    .bt{
+        font-size: 20pt;
+    }
+
+    .welcome{
+        font-size: 20pt;
+    }
+
+    .start{
+        font-family: Mont;
+        color: white;
+        text-align: center;
+        font-size: 30pt;
+    }
+}
+
+@media screen and (max-device-width: 375px) and (orientation:portrait) {
+    li{
+        font-size: 20pt;
+        line-height: 350%;
+    }
+    .infobox{
+        height: 525px;
+    }
+    .day {
+        font-size: 20pt;
+    }
+
+    .period{
+        font-size: 20pt;
+    }
+
+    .time{
+        font-size: 13pt;
+    }
+
+    .bt{
+        font-size: 20pt;
+    }
 }
