@@ -168,11 +168,6 @@ li{
 }
 
 
-@media screen and (max-device-width: 1920px) and (orientation:portrait) {
-    body{
-        overflow-y: auto
-    }
-}
 
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
     .headercontainer{
