@@ -148,6 +148,21 @@ li{
     
 }
 
+.credit{
+    display: block;
+    float: left;
+    transform: translateY(-300px);
+    padding-left: 2%;
+    width: fit-content;
+    height: 100px;
+}
+
+.txt{
+    font-family: VCS-I-B;
+    color: white;
+    font-size: 20pt;
+}
+
 
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
     .headercontainer{
@@ -158,6 +173,15 @@ li{
         max-width: 60%;
         text-align: center;
         margin-top: 10%;
+    }
+
+    .credit{
+        padding: 0%;
+        height: 0;
+    }
+
+    .txt{
+        opacity: 0;
     }
 
     .header{
@@ -231,11 +255,29 @@ li{
     .time{
         font-size: 17pt;
     }
+
+    .txt{
+        opacity: 0;
+    }
+
+    .credit{
+        padding: 0%;
+        height: 0;
+    }
 }
 
 @media screen and (max-device-width: 414px) and (orientation:portrait) {
     .time{
         font-size: 17pt;
+    }
+
+    .txt{
+        opacity: 0;
+    }
+
+    .credit{
+        padding: 0%;
+        height: 0;
     }
 }
 
@@ -278,6 +320,15 @@ li{
         text-align: center;
         font-size: 30pt;
     }
+
+    .txt{
+        opacity: 0;
+    }
+
+    .credit{
+        padding: 0%;
+        height: 0;
+    }
 }
 
 @media screen and (max-device-width: 375px) and (orientation:portrait) {
@@ -302,5 +353,14 @@ li{
 
     .bt{
         font-size: 20pt;
+    }
+
+    .txt{
+        opacity: 0;
+    }
+
+    .credit{
+        padding: 0%;
+        height: 0;
     }
 }
