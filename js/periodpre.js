@@ -89,10 +89,12 @@ async function updateSchedule() {
         const schoolStartContentArea = document.querySelector('.start');
         const periodElement = document.querySelector('.period');
         const timeLeftElement = document.querySelector('.time');
+        const btelemtn = document.querySelector('.bt')
 
         // Get the parent 'li' elements
         const periodListItem = periodElement.parentNode;
         const timeLeftListItem = timeLeftElement.parentNode;
+        const bulldogList = btelemtn.parentNode;
 
         if (isWeekend) {
             schoolStartContentArea.textContent = 'Enjoy Your Weekend!';
@@ -108,6 +110,7 @@ async function updateSchedule() {
             schoolStartContentArea.textContent = 'Your Day Is Over!';
             periodListItem.style.display = 'none';
             timeLeftListItem.style.display = 'none';
+            bulldogList.style.display = 'none';
         }
     } catch (error) {
         console.error('Error updating schedule:', error);
