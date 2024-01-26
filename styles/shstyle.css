@@ -3,26 +3,6 @@
     src: url('../fonts/Mont.otf');
 }
 
-@font-face{
-    font-family: 'VCS-B';
-    src: url('../fonts/ViceCitySans-Bold.otf')
-}
-
-@font-face{
-    font-family: 'VCS-I-B';
-    src: url('ViceCitySans-ItalicBold.otf')
-}
-
-@font-face{
-    font-family: 'VCS-I-L';
-    src: url('ViceCitySans-ItalicLight.otf')
-}
-
-@font-face{
-    font-family: 'VCS-L';
-    src: url('ViceCitySans-Light.otf')
-}
-
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -181,7 +161,7 @@ li{
     }
 
     .credit{
-        padding: 0%;
+        padding: 0;
         height: 0;
     }
 
@@ -297,11 +277,11 @@ li{
     }
 
     li{
-        font-size: 20pt;
-        line-height: 50%;
+        font-size: 10pt;
+        line-height: 20%;
     }
     .day {
-        font-size: 15pt;
+        font-size: 10pt;
     }
 
     .period{
@@ -339,18 +319,18 @@ li{
 
 @media screen and (max-device-width: 375px) and (orientation:portrait) {
     li{
-        font-size: 20pt;
+        font-size: 15pt;
         line-height: 350%;
     }
     .infobox{
         height: 525px;
     }
     .day {
-        font-size: 20pt;
+        font-size: 15pt;
     }
 
     .period{
-        font-size: 20pt;
+        font-size: 15pt;
     }
 
     .time{
@@ -358,7 +338,7 @@ li{
     }
 
     .bt{
-        font-size: 20pt;
+        font-size: 15pt;
     }
 
     .txt{
@@ -368,5 +348,19 @@ li{
     .credit{
         padding: 0%;
         height: 0;
+    }
+}
+
+@media screen and (max-device-width: 280px) and (orientation:portrait){
+    .bt{
+        font-size: 15pt;
+    }
+
+    .header{
+        font-size: 20pt;
+    }
+
+    li{
+        line-height: 500%;
     }
 }
