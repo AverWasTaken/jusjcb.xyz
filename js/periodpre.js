@@ -89,25 +89,35 @@ async function updateSchedule() {
         const schoolStartContentArea = document.querySelector('.start');
         const periodElement = document.querySelector('.period');
         const timeLeftElement = document.querySelector('.time');
+        const bulldogTimeElement = document.querySelector('.bt')
+        const dayOverElement = document.querySelector('.dayover')
+        const dayType = document.querySelector('.day')
 
         // Get the parent 'li' elements
         const periodListItem = periodElement.parentNode;
         const timeLeftListItem = timeLeftElement.parentNode;
+        const bulldogList = bulldogTimeElement.parentNode;
+        const dayTypeList = dayType.parentNode;
 
         if (isWeekend) {
             schoolStartContentArea.textContent = 'Enjoy Your Weekend!';
             periodListItem.style.display = 'none';
             timeLeftListItem.style.display = 'none';
+            dayOverElement.style.display = 'none'
         } else if (currentPeriod) {
             schoolStartContentArea.textContent = 'Make It A Good One!';
             periodListItem.style.display = 'list-item';
             timeLeftListItem.style.display = 'list-item';
             periodElement.textContent = currentPeriod.period;
             timeLeftElement.textContent = currentPeriod.remainingTime;
+            dayOverElement.style.display = 'none';
         } else {
             schoolStartContentArea.textContent = 'Your Day Is Over!';
             periodListItem.style.display = 'none';
             timeLeftListItem.style.display = 'none';
+            bulldogList.style.display = 'none';
+            dayOverElement.textContent = 'Have A Great Day!';
+            dayTypeList.style.display = 'none';
         }
     } catch (error) {
         console.error('Error updating schedule:', error);

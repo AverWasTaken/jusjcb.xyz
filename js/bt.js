@@ -14,7 +14,7 @@ async function updateBulldogTime() {
         if (todaysEntry) {
             bulldogTimeElement.textContent = todaysEntry.bulldogTime;
         } else {
-            bulldogTimeElement.textContent = 'No Bulldog Time Today';
+            bulldogTimeElement.textContent = 'None';
         }
     } catch (error) {
         console.error('Failed to load or process Bulldog Time data:', error);
