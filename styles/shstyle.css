@@ -147,6 +147,10 @@ li{
     font-size: 24pt;
 }
 
+.dayover{
+    font-size: 80pt;
+}
+
 
 
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
@@ -200,6 +204,10 @@ li{
         font-size: 15pt;
     }
 
+    .dayover{
+        font-size: 25pt;
+    }
+
     .start{
         font-family: Mont;
         color: white;
@@ -249,6 +257,10 @@ li{
         padding: 0%;
         height: 0;
     }
+
+    .dayover{
+        font-size: 25pt;
+    }
 }
 
 @media screen and (max-device-width: 414px) and (orientation:portrait) {
@@ -263,6 +275,10 @@ li{
     .credit{
         padding: 0%;
         height: 0;
+    }
+
+    .dayover{
+        font-size: 25pt;
     }
 }
 
@@ -315,6 +331,10 @@ li{
         padding: 0%;
         height: 0;
     }
+
+    .dayover{
+        font-size: 25pt;
+    }
 }
 
 @media screen and (max-device-width: 375px) and (orientation:portrait) {
@@ -349,6 +369,10 @@ li{
         padding: 0%;
         height: 0;
     }
+
+    .dayover{
+        font-size: 25pt;
+    }
 }
 
 @media screen and (max-device-width: 280px) and (orientation:portrait){
@@ -362,5 +386,9 @@ li{
 
     li{
         line-height: 500%;
+    }
+
+    .dayover{
+        font-size: 25pt;
     }
 }
