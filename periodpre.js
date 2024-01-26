@@ -1,11 +1,13 @@
-// Helper function to parse time strings
+// Helper function to parse time strings into Moment objects
+// timeStr: String representing time (e.g., "7:00AM")
+// Returns: Moment object or null if invalid format
 function parseTime(timeStr) {
     const currentTime = moment();
     const timeComponents = timeStr.match(/(\d+):(\d+)(AM|PM)/);
 
     if (!timeComponents) {
         console.error(`Invalid time format: ${timeStr}`);
-        return null;
+        throw new Error(`Invalid time format: ${timeStr}`); // Throw an error on invalid format
     }
 
     let [_, hours, minutes, modifier] = timeComponents;
@@ -14,7 +16,10 @@ function parseTime(timeStr) {
     return currentTime.clone().hour(hours).minute(minutes).second(0).millisecond(0);
 }
 
-// Helper function to format remaining time
+
+// Formats the time remaining until a given moment
+// endMoment: Moment object representing the end time
+// Returns: String representing formatted remaining time
 function formatRemainingTime(endMoment) {
     const diff = moment.duration(endMoment.diff(moment()));
     const hours = Math.floor(diff.asHours());
@@ -24,6 +29,7 @@ function formatRemainingTime(endMoment) {
     return `${hours > 0 ? `${hours}H ` : ''}${minutes}M & ${seconds}S`;
 }
 
+// Data structure representing school schedules
 const scheduleData = {
     "regularSchedule": [
         { "start": "7:00AM", "end": "7:55AM", "period": "Early Bird" },
@@ -44,8 +50,9 @@ const scheduleData = {
     ]
 };
 
-// Determine the current period
-// Determine the current period
+// Determines the current period based on a given schedule
+// schedule: Array of schedule objects with start, end, and period properties
+// Returns: Object representing the current period and remaining time or null if no current period
 function getCurrentPeriod(schedule) {
     const now = moment();
 
@@ -69,7 +76,7 @@ function getCurrentPeriod(schedule) {
     return null;
 }
 
-// Fetch and update the schedule
+// Updates the school schedule display on the webpage
 async function updateSchedule() {
     try {
         const now = new Date();
@@ -106,11 +113,11 @@ async function updateSchedule() {
         console.error('Error updating schedule:', error);
     }
 }
-
+// Refreshes the page after a specified interval
 function refreshPage() {
     setTimeout(() => window.location.reload(), 1800000); // 30 minutes
 }
-
+// Event listener for page load
 window.addEventListener('load', () => {
     updateSchedule();
     setInterval(updateSchedule, 1000);
