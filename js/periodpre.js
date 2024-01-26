@@ -89,12 +89,12 @@ async function updateSchedule() {
         const schoolStartContentArea = document.querySelector('.start');
         const periodElement = document.querySelector('.period');
         const timeLeftElement = document.querySelector('.time');
-        const btelemtn = document.querySelector('.bt')
+        const bulldogTimeElement = document.querySelector('.bt')
 
         // Get the parent 'li' elements
         const periodListItem = periodElement.parentNode;
         const timeLeftListItem = timeLeftElement.parentNode;
-        const bulldogList = btelemtn.parentNode;
+        const bulldogList = bulldogTimeElement.parentNode;
 
         if (isWeekend) {
             schoolStartContentArea.textContent = 'Enjoy Your Weekend!';
