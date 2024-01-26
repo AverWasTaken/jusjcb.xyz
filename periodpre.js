@@ -87,8 +87,8 @@ async function updateSchedule() {
             timeLeftContentArea.textContent = '';
         } else {
             schoolStartContentArea.textContent = currentPeriod ? 'Make It A Good One!' : 'School is Over';
-            periodContentArea.textContent = currentPeriod?.period || 'Day Over.';
-            timeLeftContentArea.textContent = currentPeriod?.remainingTime || 'Day Over.';
+            periodContentArea.textContent = currentPeriod?.period || 'Day Over';
+            timeLeftContentArea.textContent = currentPeriod?.remainingTime || 'Day Over';
         }
     } catch (error) {
         console.error('Error updating schedule:', error);
