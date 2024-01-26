@@ -27,23 +27,24 @@ function formatRemainingTime(endMoment) {
 const scheduleData = {
     "regularSchedule": [
         { "start": "7:00AM", "end": "7:55AM", "period": "Early Bird" },
-        { "start": "8:00AM", "end": "9:25AM", "period": "1st Period" },
-        { "start": "9:30AM", "end": "10:50AM", "period": "2nd Period" },
+        { "start": "8:05AM", "end": "9:25AM", "period": "1st Period " },
+        { "start": "9:30AM", "end": "10:50AM", "period": "2nd Period " },
         { "start": "10:50AM", "end": "11:25AM", "period": "Bulldog Time" },
-        { "start": "11:20AM", "end": "12:00PM", "period": "Lunch" },
-        { "start": "12:05PM", "end": "1:25PM", "period": "3rd Period" },
-        { "start": "1:30PM", "end": "2:50PM", "period": "4th Period" }
+        { "start": "11:25AM", "end": "12:05PM", "period": "Lunch" },
+        { "start": "12:05PM", "end": "1:25PM", "period": "3rd Period " },
+        { "start": "1:30PM", "end": "2:50PM", "period": "4th Period " }
     ],
     "earlyReleaseSchedule": [
         { "start": "7:00AM", "end": "7:55AM", "period": "Early Bird" },
-        { "start": "8:05AM", "end": "9:18AM", "period": "1st Period" },
-        { "start": "9:23AM", "end": "10:39AM", "period": "2nd Period" },
-        { "start": "10:44AM", "end": "11:57AM", "period": "3rd Period" },
+        { "start": "8:05AM", "end": "9:18AM", "period": "1st Period " },
+        { "start": "9:23AM", "end": "10:39AM", "period": "2nd Period " },
+        { "start": "10:44AM", "end": "11:57AM", "period": "3rd Period " },
         { "start": "11:57AM", "end": "12:37PM", "period": "Lunch" },
-        { "start": "12:37PM", "end": "1:50PM", "period": "4th Period" }
+        { "start": "12:37PM", "end": "1:50PM", "period": "4th Period " }
     ]
 };
 
+// Determine the current period
 // Determine the current period
 function getCurrentPeriod(schedule) {
     const now = moment();
@@ -57,9 +58,10 @@ function getCurrentPeriod(schedule) {
             return { ...schedule[i], remainingTime: formatRemainingTime(endMoment) };
         }
 
+        // Adjusted logic for passing period
         if (i < schedule.length - 1) {
             const nextPeriodStart = parseTime(schedule[i + 1].start);
-            if (now.isBetween(endMoment, endMoment.clone().add(5, 'minutes'))) {
+            if (now.isBetween(endMoment, nextPeriodStart)) {
                 return { period: 'Passing Period', remainingTime: formatRemainingTime(nextPeriodStart) };
             }
         }
@@ -78,17 +80,27 @@ async function updateSchedule() {
 
         // DOM Elements
         const schoolStartContentArea = document.querySelector('.start');
-        const periodContentArea = document.querySelector('.period');
-        const timeLeftContentArea = document.querySelector('.time');
+        const periodElement = document.querySelector('.period');
+        const timeLeftElement = document.querySelector('.time');
+
+        // Get the parent 'li' elements
+        const periodListItem = periodElement.parentNode;
+        const timeLeftListItem = timeLeftElement.parentNode;
 
         if (isWeekend) {
             schoolStartContentArea.textContent = 'Enjoy Your Weekend!';
-            periodContentArea.textContent = 'Enjoy Your Weekend!';
-            timeLeftContentArea.textContent = '';
+            periodListItem.style.display = 'none';
+            timeLeftListItem.style.display = 'none';
+        } else if (currentPeriod) {
+            schoolStartContentArea.textContent = 'Make It A Good One!';
+            periodListItem.style.display = 'list-item';
+            timeLeftListItem.style.display = 'list-item';
+            periodElement.textContent = currentPeriod.period;
+            timeLeftElement.textContent = currentPeriod.remainingTime;
         } else {
-            schoolStartContentArea.textContent = currentPeriod ? 'Make It A Good One!' : 'School is Over';
-            periodContentArea.textContent = currentPeriod?.period || 'Day Over';
-            timeLeftContentArea.textContent = currentPeriod?.remainingTime || 'Day Over';
+            schoolStartContentArea.textContent = 'Your Day Is Over!';
+            periodListItem.style.display = 'none';
+            timeLeftListItem.style.display = 'none';
         }
     } catch (error) {
         console.error('Error updating schedule:', error);
