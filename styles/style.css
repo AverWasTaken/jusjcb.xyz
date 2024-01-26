@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Mont';
-  src: url('Mont.otf');
+  src: url('../fonts/Mont.otf');
 }
 
 
 html, body{
-  background-image: url(content/background-2.jpg);
+  background-image: url(../content/background-2.jpg);
   margin: 0;
   padding: 0;
   height: 100%;
