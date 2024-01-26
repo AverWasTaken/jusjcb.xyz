@@ -1,6 +1,6 @@
 async function updateBulldogTime() {
     try {
-        const response = await fetch('bt.json');
+        const response = await fetch('../json/bt.json');
         const data = await response.json();
 
         // Use Moment.js to format the current date as D-M-Y
