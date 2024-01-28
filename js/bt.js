@@ -11,10 +11,11 @@ async function updateBulldogTime() {
         const todaysEntry = data.btschedule.find(entry => entry.date === todayFormatted);
 
         const bulldogTimeElement = document.querySelector('.bt');
+        const bulldogList = bulldogTimeElement.parentNode;
         if (todaysEntry) {
             bulldogTimeElement.textContent = todaysEntry.bulldogTime;
         } else {
-            bulldogTimeElement.textContent = 'None';
+            bulldogList.style.display = 'none'
         }
     } catch (error) {
         console.error('Failed to load or process Bulldog Time data:', error);

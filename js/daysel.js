@@ -7,6 +7,7 @@ function updateDay() {
 
     let daySpan = document.querySelector('.day');
 
+
     // Calculate the difference in days from the known "B day"
     let diffTime = today - knownBday;
     let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
@@ -16,9 +17,9 @@ function updateDay() {
     if (today.getDay() === 0 || today.getDay() === 6) {
         
         if (dayType === 'A') {
-            daySpan.innerHTML = `It will be an ${dayType} day on Monday`;
+            daySpan.innerHTML = ` <br>It will be an ${dayType} day Monday`;
         } else { 
-            daySpan.innerHTML = `It will be a ${dayType} day on Monday`;
+            daySpan.innerHTML = ` <br> It will be a ${dayType} day Monday`;
         }
     } else {
         
