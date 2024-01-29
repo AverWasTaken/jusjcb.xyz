@@ -1,11 +1,11 @@
 {
   "btschedule": [
-    {"date": "01-29-2024", "bulldogTime": "1A"},
-    {"date": "01-30-2024", "bulldogTime": "2A"},
+    {"date": "01-29-2024", "bulldogTime": "1A | Freshmen - AUD"},
+    {"date": "01-30-2024", "bulldogTime": "2A | Sophomores - AUD"},
     {"date": "01-31-2024", "bulldogTime": "3A"},
     {"date": "02-01-2024", "bulldogTime": "4A"},
-    {"date": "02-05-2024", "bulldogTime": "1B"},
-    {"date": "02-06-2024", "bulldogTime": "AUD"},
+    {"date": "02-05-2024", "bulldogTime": "1B | Seniors - AUD"},
+    {"date": "02-06-2024", "bulldogTime": "2B | Juniors - AUD"},
     {"date": "02-07-2024", "bulldogTime": "3B"},
     {"date": "02-08-2024", "bulldogTime": "4B"},
     {"date": "02-12-2024", "bulldogTime": "1A"},
