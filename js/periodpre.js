@@ -115,9 +115,7 @@ async function updateSchedule() {
             schoolStartContentArea.textContent = 'Your Day Is Over!';
             periodListItem.style.display = 'none';
             timeLeftListItem.style.display = 'none';
-            bulldogList.style.display = 'none';
             dayOverElement.textContent = 'Have A Great Day!';
-            dayTypeList.style.display = 'none';
         }
     } catch (error) {
         console.error('Error updating schedule:', error);
