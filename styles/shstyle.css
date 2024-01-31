@@ -17,7 +17,6 @@ html, body{
     background-size: cover; 
     height: 100%; 
     overflow-x: hidden;
-    overflow-y: hidden; 
 }
 
 .headercontainer{
