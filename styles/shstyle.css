@@ -150,6 +150,17 @@ li{
     font-size: 80pt;
 }
 
+@media screen and (max-device-width: 1920px){
+    li{
+        line-height: 150%;
+        transform: translateY(-150px);
+        font-size: 60pt;
+    }
+
+    .period{
+        font-size: 60pt;
+    }
+}
 
 
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
