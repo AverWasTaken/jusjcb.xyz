@@ -17,7 +17,6 @@ html, body{
     background-size: cover; 
     height: 100%; 
     overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 .headercontainer{
@@ -152,6 +151,10 @@ li{
 }
 
 @media screen and (max-device-width: 1920px){
+    html, body{
+        overflow-y: hidden;
+    }
+    
     li{
         line-height: 150%;
         transform: translateY(-150px);
