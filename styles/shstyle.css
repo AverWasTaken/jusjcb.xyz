@@ -166,246 +166,25 @@ li{
     }
 }
 
+@media only screen and (max-width: 768px) {
 
-@media screen and (max-device-width: 480px) and (orientation:portrait) {
-    .headercontainer{
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-        border-radius: 20px;
-        max-width: 60%;
-        text-align: center;
-        margin-top: 10%;
-    }
-
-    .credit{
-        padding: 0;
-        height: 0;
-    }
-
-    .txt{
-        opacity: 0;
-    }
-
-    .header{
-        font-size: 40pt;
+    html, body{
+        background-image: url("content/backgroundmobile.jpg");
     }
 
     .infobox{
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 90%;
-        height: 40%;
+        background-color: transparent;
+        border: none;
     }
-
-    .day {
-        font-size: 15pt;
-    }
-
-
-    .period{
-        font-size: 15pt;
-    }
-
-    .time{
-        font-size: 15pt;
-    }
-
-    .bt{
-        font-size: 15pt;
-    }
-
-    .welcome{
-        font-size: 15pt;
-    }
-
-    .dayover{
-        font-size: 25pt;
-    }
-
-    .start{
-        font-family: Mont;
-        color: white;
-        text-align: center;
-        font-size: 15pt;
-    }
-
-    ul{
-        transform: translateY(-20%);
-    }
-
-    li{
-        font-size: 20pt;
-        line-height: 260%;
-    }
-
-
-
-    .qr{
-        width: 0px;
-        height: 0px;
-        border-radius: 0px;
-        border-color: transparent;
-        box-shadow: transparent 0 0 0;
-        opacity: 0;
-    }
-
-    .qrtxt{
-        font-size: 0px;
-    }
-
-    .code{
-        width: 0px;
-        height: 0px;
-    }
-
-}
-
-@media screen and (max-device-width: 412px) and (orientation:portrait) {
-    .time{
-        font-size: 17pt;
-    }
-
-    .txt{
-        opacity: 0;
-    }
-
-    .credit{
-        padding: 0%;
-        height: 0;
-    }
-
-    .dayover{
-        font-size: 25pt;
-    }
-}
-
-@media screen and (max-device-width: 414px) and (orientation:portrait) {
-    .time{
-        font-size: 17pt;
-    }
-
-    .txt{
-        opacity: 0;
-    }
-
-    .credit{
-        padding: 0%;
-        height: 0;
-    }
-
-    .dayover{
-        font-size: 25pt;
-    }
-}
-
-@media screen and (max-device-width: 360px) and (orientation:portrait) {
 
     .headercontainer{
-        max-width: 82%;
+        background-color: transparent;
+        box-shadow: none;
     }
 
-    .infobox{
-        height: 580px;
-    }
-
-    li{
-        font-size: 10pt;
-        line-height: 20%;
-    }
-    .day {
-        font-size: 10pt;
-    }
-
-    .period{
-        font-size: 15pt;
-    }
-
-    .time{
-        font-size: 13pt;
-    }
-
-    .bt{
-        font-size: 15pt;
-    }
-
-    .welcome{
-        font-size: 15pt;
-    }
-
-    .start{
-        font-family: Mont;
-        color: white;
-        text-align: center;
-        font-size: 15pt;
-    }
-
-    .txt{
-        opacity: 0;
-    }
-
-    .credit{
-        padding: 0%;
-        height: 0;
-    }
-
-    .dayover{
-        font-size: 25pt;
-    }
 }
 
-@media screen and (max-device-width: 375px) and (orientation:portrait) {
-    li{
-        font-size: 15pt;
-        line-height: 350%;
-    }
-    .infobox{
-        height: 525px;
-    }
-    .day {
-        font-size: 15pt;
-    }
 
-    .period{
-        font-size: 15pt;
-    }
 
-    .time{
-        font-size: 13pt;
-    }
 
-    .bt{
-        font-size: 15pt;
-    }
 
-    .txt{
-        opacity: 0;
-    }
-
-    .credit{
-        padding: 0%;
-        height: 0;
-    }
-
-    .dayover{
-        font-size: 25pt;
-    }
-}
-
-@media screen and (max-device-width: 280px) and (orientation:portrait){
-    .bt{
-        font-size: 15pt;
-    }
-
-    .header{
-        font-size: 20pt;
-    }
-
-    li{
-        line-height: 500%;
-    }
-
-    .dayover{
-        font-size: 25pt;
-    }
-}
