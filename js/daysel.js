@@ -6,6 +6,7 @@ function updateDay() {
     today.setHours(0, 0, 0, 0); // Set time to 00:00:00.000
 
     let daySpan = document.querySelector('.day');
+    let daySpanMobile = document.querySelector('.dayMobile')
 
     // Calculate the difference in days from the known "A day"
     let diffTime = today - knownAday;
@@ -22,6 +23,7 @@ function updateDay() {
         // Display logic for weekdays
         if (daySpan) {
             daySpan.innerHTML = `<span class="day">${dayType} Day</span>`;
+            daySpanMobile.innerHTML = `<span class="dayMobile">${dayType} Day</span>`;
         }
     }
 }

@@ -18,6 +18,12 @@
         <meta property="og:image" content="https://i.imgur.com/YCQXPXf.png"> 
         <!--Meta Tags-->
 
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,500&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap');
+        </style>
+
     </head>
 
     <body>
@@ -36,14 +42,22 @@
                     <img class="qr" alt="QR Code" src="content/qr.png">
                     <h3 class="qrtxt">Scan For All Info On Your Phone!</h3>
                 </div>
-                <ul>
+                <ul class="main">
                     <li class="sdwknd">Current Day - <span class="day"></span></li>
                     <li>Bulldog Time - <span class="bt"></span></li>
                     <li>Period - <span class="period"></span></li>
                     <li>Time Left - <span class="time"></span></li>
                 </ul>
+
+                <section class="mobile">
+                    <p class="dayMobileDisplay">Its a <span class="dayMobile"></span>,</p>
+                    <p class="bulldogTimeMobile">Your Bulldog Time Will Be <span class="btmobile"></span></p>
+                    <p class="periodMobileP">It's Currently <span class="periodMobile">Hide this</span>,</p>
+                    <p class="timeleftmobile">It will end in <span class="timeremmobile"></span></p>
+                </section>
             </div>
         </header>
+
         <script src="js/daysel.js"></script>
         <script src="js/periodpre.js"></script>
         <script src="js/bt.js"></script>
