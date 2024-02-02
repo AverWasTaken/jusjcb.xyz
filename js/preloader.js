@@ -1,12 +1,20 @@
 window.addEventListener('load', function() {
-    // Hide the preloader
-    document.getElementById('preloader').style.display = 'none';
+    var preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.style.transition = 'opacity 0.6s ease';
+        preloader.style.opacity = 0;
 
-    // Get all elements with the 'main-content' class
+        // Set a timeout to remove the preloader after the fade-out transition
+        setTimeout(function() {
+            preloader.style.display = 'none';
+            preloader.remove(); // This line ensures the element is removed from the DOM
+        }, 600); // This delay should match the duration of the opacity transition
+    }
+
+    // Make all elements with the 'content-area' class visible
     var contentElements = document.querySelectorAll('.content-area');
-
-    // Iterate over each element and set its visibility to visible
     contentElements.forEach(function(element) {
         element.style.visibility = 'visible';
     });
 });
+
