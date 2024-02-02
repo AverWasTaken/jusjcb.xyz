@@ -220,7 +220,7 @@ li{
     }
 
     .dayover{
-        font-size: 25pt;
+        display: none;
     }
 
     .start{
@@ -228,6 +228,7 @@ li{
         color: white;
         text-align: center;
         font-size: 15pt;
+        margin-bottom: 30%;
     }
 
     ul{
