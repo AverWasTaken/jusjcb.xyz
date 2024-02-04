@@ -32,7 +32,7 @@ function formatRemainingTime(endMoment) {
 // Data structure representing school schedules
 const scheduleData = {
     "regularSchedule": [
-        { "start": "7:00AM", "end": "8:00AM", "period": "Early Bird" },
+        { "start": "7:00AM", "end": "7:55AM", "period": "Early Bird" },
         { "start": "8:05AM", "end": "9:25AM", "period": "1st Period " },
         { "start": "9:30AM", "end": "10:50AM", "period": "2nd Period " },
         { "start": "10:50AM", "end": "11:25AM", "period": "Bulldog Time" },
@@ -41,7 +41,7 @@ const scheduleData = {
         { "start": "1:30PM", "end": "2:50PM", "period": "4th Period " }
     ],
     "earlyReleaseSchedule": [
-        { "start": "7:00AM", "end": "8:00AM", "period": "Early Bird" },
+        { "start": "7:00AM", "end": "7:55AM", "period": "Early Bird" },
         { "start": "8:05AM", "end": "9:18AM", "period": "1st Period " },
         { "start": "9:23AM", "end": "10:39AM", "period": "2nd Period " },
         { "start": "10:44AM", "end": "11:57AM", "period": "3rd Period " },
@@ -56,8 +56,12 @@ const scheduleData = {
 function getCurrentPeriod(schedule) {
     const now = moment();
 
+    // Identify the period before lunch for both regular and early release schedules
+    const periodBeforeLunchRegular = "Bulldog Time";
+    const periodBeforeLunchEarlyRelease = "3rd Period";
+
     for (let i = 0; i < schedule.length; i++) {
-        const { start, end } = schedule[i];
+        const { start, end, period } = schedule[i];
         const startMoment = parseTime(start);
         const endMoment = parseTime(end);
 
@@ -65,10 +69,16 @@ function getCurrentPeriod(schedule) {
             return { ...schedule[i], remainingTime: formatRemainingTime(endMoment) };
         }
 
-        // Adjusted logic for passing period
+        // Skip passing period logic before lunch for both regular and early release days
+        if (period.trim() === periodBeforeLunchRegular || period.trim() === periodBeforeLunchEarlyRelease) {
+            continue; // Skip to the next iteration, ignoring the passing period logic for the period before lunch
+        }
+
+        // Adjusted logic for passing period for all other periods
         if (i < schedule.length - 1) {
             const nextPeriodStart = parseTime(schedule[i + 1].start);
             if (now.isBetween(endMoment, nextPeriodStart)) {
+                // For periods other than the one before lunch, treat it as a passing period
                 return { period: 'Passing Period', remainingTime: formatRemainingTime(nextPeriodStart) };
             }
         }
@@ -88,10 +98,13 @@ async function updateSchedule() {
         // DOM Elements
         const schoolStartContentArea = document.querySelector('.start');
         const periodElement = document.querySelector('.period');
+        const periodElementMobile = document.querySelector('.periodMobile');
         const timeLeftElement = document.querySelector('.time');
         const bulldogTimeElement = document.querySelector('.bt')
         const dayOverElement = document.querySelector('.dayover')
         const dayType = document.querySelector('.day')
+        const dayTypeMobile = document.querySelector('.dayMobile')
+        const dayOverMobile = document.querySelector('.dayovermobile')
 
         // Get the parent 'li' elements
         const periodListItem = periodElement.parentNode;
@@ -109,13 +122,16 @@ async function updateSchedule() {
             periodListItem.style.display = 'list-item';
             timeLeftListItem.style.display = 'list-item';
             periodElement.textContent = currentPeriod.period;
+            periodElementMobile.textContent = currentPeriod.period;
             timeLeftElement.textContent = currentPeriod.remainingTime;
             dayOverElement.style.display = 'none';
         } else {
             schoolStartContentArea.textContent = 'Your Day Is Over!';
             periodListItem.style.display = 'none';
             timeLeftListItem.style.display = 'none';
+            periodElementMobile.style.display= ''
             dayOverElement.textContent = 'Have A Great Day!';
+            dayOverMobile.textContent = 'Test'
         }
     } catch (error) {
         console.error('Error updating schedule:', error);
