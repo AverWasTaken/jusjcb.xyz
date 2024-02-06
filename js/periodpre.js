@@ -56,12 +56,8 @@ const scheduleData = {
 function getCurrentPeriod(schedule) {
     const now = moment();
 
-    // Identify the period before lunch for both regular and early release schedules
-    const periodBeforeLunchRegular = "Bulldog Time";
-    const periodBeforeLunchEarlyRelease = "3rd Period";
-
     for (let i = 0; i < schedule.length; i++) {
-        const { start, end, period } = schedule[i];
+        const { start, end } = schedule[i];
         const startMoment = parseTime(start);
         const endMoment = parseTime(end);
 
@@ -69,16 +65,10 @@ function getCurrentPeriod(schedule) {
             return { ...schedule[i], remainingTime: formatRemainingTime(endMoment) };
         }
 
-        // Skip passing period logic before lunch for both regular and early release days
-        if (period.trim() === periodBeforeLunchRegular || period.trim() === periodBeforeLunchEarlyRelease) {
-            continue; // Skip to the next iteration, ignoring the passing period logic for the period before lunch
-        }
-
-        // Adjusted logic for passing period for all other periods
+        // Adjusted logic for passing period
         if (i < schedule.length - 1) {
             const nextPeriodStart = parseTime(schedule[i + 1].start);
             if (now.isBetween(endMoment, nextPeriodStart)) {
-                // For periods other than the one before lunch, treat it as a passing period
                 return { period: 'Passing Period', remainingTime: formatRemainingTime(nextPeriodStart) };
             }
         }
