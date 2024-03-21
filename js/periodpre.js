@@ -88,7 +88,7 @@ async function updateSchedule() {
         // DOM Elements
         const schoolStartContentArea = document.querySelector('.start');
         const periodElement = document.querySelector('.period');
-        const periodElementMobile = document.querySelector('.periodMobile');
+        const periodElementMobile = document.querySelector('.period');
         const timeLeftElement = document.querySelector('.time');
         const bulldogTimeElement = document.querySelector('.bt')
         const dayOverElement = document.querySelector('.dayover')
