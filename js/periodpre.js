@@ -92,7 +92,6 @@ async function updateSchedule() {
         const timeLeftElement = document.querySelector('.time');
         const bulldogTimeElement = document.querySelector('.bt')
         const dayOverElement = document.querySelector('.dayover')
-        const dayType = document.querySelector('.day')
         const dayTypeMobile = document.querySelector('.dayMobile')
         const dayOverMobile = document.querySelector('.dayovermobile')
 
@@ -100,7 +99,7 @@ async function updateSchedule() {
         const periodListItem = periodElement.parentNode;
         const timeLeftListItem = timeLeftElement.parentNode;
         const bulldogList = bulldogTimeElement.parentNode;
-        const dayTypeList = dayType.parentNode;
+        
 
         if (isWeekend) {
             schoolStartContentArea.textContent = 'Enjoy Your Weekend!';
