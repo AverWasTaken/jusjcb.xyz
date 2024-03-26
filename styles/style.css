@@ -3,6 +3,11 @@
   src: url('../fonts/Mont.otf');
 }
 
+@font-face {
+  font-family: 'quest';
+  src: url('../fonts/Questrial-Regular.ttf');
+}
+
 @-webkit-keyframes animate-preloader {
   0% {
     transform: rotate(0deg);
@@ -49,13 +54,19 @@
 }
 
 html, body{
-  background-image: url(../content/background-2.jpg);
+  background-image: url(../content/background-2.png);
   margin: 0;
   padding: 0;
   height: 100%;
   background-size: cover; 
   height: 100%; 
-  overflow-x: hidden; 
+  overflow-x: hidden;
+  overflow-y: hidden; 
+  background-color: transparent;
+  border: solid 1px #fff;
+  box-shadow:
+    inset 1px 0 30px #FFFFFF,  /* left magenta */
+    inset 1px 0 30px #FFFFFF; /* right cyan */
 }
 
 .content-area{
@@ -70,25 +81,27 @@ html, body{
 
 .text{
   font-family: Mont;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 20% 0;
   font-size: 5vh;
 }
 
+
 .small{
   font-size: 3vh;
   font-family: Quicksand;
+  font-weight: 500;
   display: inline;
 }
 
 #typing {
   display: inline;
-  color: rgb(36, 239, 236); 
-  font-weight: bold;
+  color: #8be8f8; 
+  font-weight: bolder;
 }
 
 .typed-cursor {
-  color: rgb(36, 239, 236); 
+  color: #6fe6fa; 
 }
 
 .social{
