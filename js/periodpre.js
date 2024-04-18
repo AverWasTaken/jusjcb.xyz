@@ -50,7 +50,7 @@ function formatRemainingTime(endMoment) {
 // Data structure representing school schedules
 const scheduleData = {
     "regularSchedule": [
-        { "start": "7:00AM", "end": "8:00AM", "period": "Early Bird" },
+        { "start": "7:00AM", "end": "7:59AM", "period": "Early Bird" },
         { "start": "8:05AM", "end": "9:25AM", "period": "1st Period " },
         { "start": "9:30AM", "end": "10:50AM", "period": "2nd Period " },
         { "start": "10:50AM", "end": "11:25AM", "period": "Bulldog Time" },
