@@ -51,20 +51,20 @@ function formatRemainingTime(endMoment) {
 const scheduleData = {
     "regularSchedule": [
         { "start": "7:00AM", "end": "7:59AM", "period": "Early Bird" },
-        { "start": "8:05AM", "end": "9:25AM", "period": "1st Period " },
-        { "start": "9:30AM", "end": "10:50AM", "period": "2nd Period " },
+        { "start": "8:05AM", "end": "9:25AM", "period": "1st " },
+        { "start": "9:30AM", "end": "10:50AM", "period": "2nd " },
         { "start": "10:50AM", "end": "11:25AM", "period": "Bulldog Time" },
         { "start": "11:25AM", "end": "12:00PM", "period": "Lunch" },
-        { "start": "12:05PM", "end": "1:25PM", "period": "3rd Period " },
-        { "start": "1:30PM", "end": "2:50PM", "period": "4th Period " }
+        { "start": "12:05PM", "end": "1:25PM", "period": "3rd " },
+        { "start": "1:30PM", "end": "2:50PM", "period": "4th " }
     ],
     "earlyReleaseSchedule": [
         { "start": "7:00AM", "end": "7:55AM", "period": "Early Bird" },
-        { "start": "8:05AM", "end": "9:18AM", "period": "1st Period " },
-        { "start": "9:23AM", "end": "10:39AM", "period": "2nd Period " },
-        { "start": "10:44AM", "end": "11:57AM", "period": "3rd Period " },
+        { "start": "8:05AM", "end": "9:18AM", "period": "1st " },
+        { "start": "9:23AM", "end": "10:39AM", "period": "2nd " },
+        { "start": "10:44AM", "end": "11:57AM", "period": "3rd " },
         { "start": "11:57AM", "end": "12:32PM", "period": "Lunch" },
-        { "start": "12:37PM", "end": "1:50PM", "period": "4th Period " }
+        { "start": "12:37PM", "end": "1:50PM", "period": "4th " }
     ]
 };
 
