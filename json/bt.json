@@ -17,7 +17,7 @@
     {"date": "05-13-2024", "bulldogTime": "1A", "day": "B"},
     {"date": "05-14-2024", "bulldogTime": "2A", "day": "A"},
     {"date": "05-15-2024", "bulldogTime": "3A", "day": "B"},
-    {"date": "05-16-2024", "bulldogTime": "4A", "day": "A"}
-    {"date": "05-17-2024", "day": "B"},
+    {"date": "05-16-2024", "bulldogTime": "4A", "day": "A"},
+    {"date": "05-17-2024", "day": "B"}
   ]
 }
