@@ -1,16 +1,131 @@
-body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
-input[type="text"], button {
-  font-size: 18px;
-  padding: 12px 24px;
-  margin: 5px;
-  border: 2px solid #ddd;
-  border-radius: 4px;
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #121212; /* Dark gray background as the primary color */
+    color: #E0E0E0; /* Soft white text for contrast */
 }
-.checkinButton { background-color: green; color: white; }
-.time-log { margin-top: 20px; }
-table { width: 100%; border-collapse: collapse; }
-th, td { text-align: left; padding: 8px; border: 1px solid #ddd; background-color: white; }
-.alert { animation: flashRed 0.5s infinite; }
-@keyframes flashRed {
-  50% { background-color: red; }
+
+header {
+    background: #1F1F1F; /* Slightly lighter dark shade for the header */
+    color: #E0E0E0;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5); /* Stronger shadow for a layered effect */
+}
+
+h1 {
+    font-size: 24px; /* Increased font size for heading */
+    margin: 0;
+}
+.lic{
+    text-decoration: underline;
+}
+
+.input-container,
+.button-container {
+    text-align: center; /* Center align the content */
+    margin-bottom: 10px; /* Add some space between the input and button */
+}
+
+.input-area {
+    display: block; /* Remove flex to allow default block behavior */
+    margin: 20px auto; /* Center the input area horizontally */
+    max-width: 500px; /* Max width for better control on larger screens */
+}
+
+input[type="text"], button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #2D2D2D; /* Matching the button border to the card borders in the image */
+    background: #1F1F1F; /* Dark background for inputs */
+    color: #E0E0E0;
+    border-radius: 4px;
+}
+
+button#checkOutButton {
+    width: 100%; /* Make button take the full width of its container */
+    padding: 20px; /* Increase padding to make the button larger */
+    font-size: 18px; /* Increase font size for better visibility */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+button {
+    cursor: pointer;
+    background-color: #079c27; /* Blue accent color for buttons */
+    color: #FFFFFF;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    white-space: nowrap; /* Ensures text doesn't wrap in the button */
+}
+
+button:hover {
+    background-color: #05641a; /* A shade darker on hover */
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); /* Slight shadow on hover for depth */
+}
+
+.time-log {
+    margin-top: 20px;
+    background: #1F1F1F; /* Consistent card-like background for the log */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5); /* Card shadow for depth */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #2D2D2D; /* Subtle borders for separation */
+}
+
+th {
+    color: #E0E0E0;
+    background-color: #262626; /* A subtle distinction for table headers */
+}
+
+td {
+    background-color: #1F1F1F;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    background: #1F1F1F; /* Footer matching the card background */
+    color: #E0E0E0;
+    position: relative; /* Changed from absolute to relative */
+    width: 100%;
+}
+
+footer p {
+    font-size: 0.9em; /* Slightly smaller text size for footer */
+    margin: 0;
+}
+
+.alert {
+    background-color: #C62828; /* Alert color from the image for contrast */
+    color: white;
+}
+
+/* Responsive design adjustments for better viewing on all devices */
+@media (max-width: 768px) {
+    .input-area {
+        width: 90%; /* Allow some margin on smaller screens */
+    }
+
+    input[type="text"] {
+        margin-bottom: 10px;
+    }
 }

@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bathroom Time Tracker</title>
-    <link rel="stylesheet" href="styles\timestyle.css">
+    <link rel="stylesheet" href="styles/timestyle.css">
 </head>
 <body>
     <header>
         <div class="header-content">
-            <h1>Bathroom Visit Time Tracker</h1>
+            <h1>Outage Time Tracker</h1>
         </div>
     </header>
     <main>
         <div class="main-content">
-            <section class="input-area">
-                <div class="input-group">
-                    <input type="text" id="studentName" placeholder="Enter student name" onkeydown="handleKeyDown(event)">
-                    <button id="checkOutButton" onclick="checkOut()">Check Out</button>
-                </div>
-            </section>
+          <section class="input-area">
+            <div class="input-container">
+                <input type="text" id="studentName" placeholder="Enter student name" onkeydown="handleKeyDown(event)">
+            </div>
+            <div class="button-container">
+                <button id="checkOutButton" onclick="checkOut()">Check Out</button>
+            </div>
+          </section>
             <section class="time-log">
                 <div class="table-responsive">
                     <table>
@@ -43,11 +45,11 @@
               <p id="checkoutsToday">Total Check-Outs Today: 0</p>
           </div>
           <hr>
-          <b><p>Software Solutions Provided By Jacob Young</p></b>
-          <em><p>Licensed for Sandpoint Highschool, LPOSD #84</p></em>
+          <b><p>Software Solutions Provided By Jacob Young ©</p></b>
+          <em><p class="lic">Licensed for Sandpoint Highschool, LPOSD #84</p></em>
       </div>
   </footer>
   
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
