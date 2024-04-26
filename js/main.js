@@ -54,21 +54,28 @@ function updateLiveTime(name) {
 
 function displayStatistics() {
   // Count only students who are currently checked out
-  const totalStudentsCheckedOut = Object.values(students).reduce((count, student) => count + (!student.checkedIn ? 1 : 0), 0);
+  const currentStudentsOut = Object.values(students).reduce((count, student) => {
+      return count + (!student.checkedIn ? 1 : 0);
+  }, 0);
+
+  // Count all students who have checked out at least once
+  const totalStudentsCheckedOut = Object.keys(students).length;
 
   // Update statistics display
-  document.getElementById('totalStudents').textContent = `Current Students Out: ${totalStudentsCheckedOut}`;
+  document.getElementById('currentStudentsOut').textContent = `Current Students Out: ${currentStudentsOut}`;
+  document.getElementById('totalStudentsCheckedOut').textContent = `Total Check Outs: ${totalStudentsCheckedOut}`;
 
   // Manage the visibility of the 'Action' column
   const actionColumn = document.querySelectorAll('th:nth-child(3), td:nth-child(3)');
   actionColumn.forEach(cell => {
-      if (totalStudentsCheckedOut > 0) {
+      if (currentStudentsOut > 0) {
           cell.classList.remove('hidden-column'); // Show the column
       } else {
           cell.classList.add('hidden-column'); // Hide the column
       }
   });
 }
+
 
 window.onload = function() {
   displayStatistics();  // Initialize the display
