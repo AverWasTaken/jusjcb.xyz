@@ -1,82 +1,94 @@
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 20px;
-    background: #121212; /* Dark gray background as the primary color */
-    color: #E0E0E0; /* Soft white text for contrast */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background: #121212;
+    color: #E0E0E0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
-    background: #1F1F1F; /* Slightly lighter dark shade for the header */
-    color: #E0E0E0;
+    width: 100%;
+    background: #1F1F1F;
     padding: 20px 0;
     text-align: center;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5); /* Stronger shadow for a layered effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.hidden-column {
+    display: none;
+}
+
+.red-text {
+    color: red;
+}
+
 
 h1 {
-    font-size: 24px; /* Increased font size for heading */
-    margin: 0;
-}
-.lic{
-    text-decoration: underline;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: #4CAF50;
 }
 
-.input-container,
-.button-container {
-    text-align: center; /* Center align the content */
-    margin-bottom: 10px; /* Add some space between the input and button */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
 }
 
-.input-area {
-    display: block; /* Remove flex to allow default block behavior */
-    margin: 20px auto; /* Center the input area horizontally */
-    max-width: 500px; /* Max width for better control on larger screens */
+.input-area, .time-log {
+    width: 100%;
+    max-width: 700px; /* Adjust this to fit your content width */
+    margin: 0 auto 20px;
+    padding: 20px;
+    background: #1F1F1F;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 input[type="text"], button {
-    width: 100%;
-    box-sizing: border-box;
+    text-align: center;
+    background: #121212;
+    color: white;
+    width: 95%;
     padding: 15px;
-    font-size: 16px;
-    border: 1px solid #2D2D2D; /* Matching the button border to the card borders in the image */
-    background: #1F1F1F; /* Dark background for inputs */
-    color: #E0E0E0;
+    font-size: 1rem;
+    border: none;
     border-radius: 4px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px; /* Space between input and button */
+}
+
+input[type="text"]:hover, input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #4CAF50;
 }
 
 button#checkOutButton {
-    width: 100%; /* Make button take the full width of its container */
-    padding: 20px; /* Increase padding to make the button larger */
-    font-size: 18px; /* Increase font size for better visibility */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    background-color: #4CAF50;
+    border-radius: 20px;
+    color: rgb(255, 251, 251);
+    margin-bottom: 10px; /* Space between button and table */
+    transition: all 0.3s ease;
+    display: block;
+    margin: auto;
 }
 
-input[type="text"] {
-    flex-grow: 1;
-    margin-right: 10px;
-}
-
-button {
-    cursor: pointer;
-    background-color: #079c27; /* Blue accent color for buttons */
-    color: #FFFFFF;
-    transition: background-color 0.2s, box-shadow 0.2s;
-    white-space: nowrap; /* Ensures text doesn't wrap in the button */
+button#checkOutButton:hover {
+    background-color: #4ec754;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transform: translateY(4px);
 }
 
 button:hover {
-    background-color: #05641a; /* A shade darker on hover */
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5); /* Slight shadow on hover for depth */
-}
-
-.time-log {
-    margin-top: 20px;
-    background: #1F1F1F; /* Consistent card-like background for the log */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5); /* Card shadow for depth */
+    background-color: #388E3C;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 table {
@@ -85,47 +97,56 @@ table {
 }
 
 th, td {
-    text-align: left;
     padding: 15px;
-    border-bottom: 1px solid #2D2D2D; /* Subtle borders for separation */
+    border-bottom: 1px solid #2D2D2D;
 }
 
 th {
-    color: #E0E0E0;
-    background-color: #262626; /* A subtle distinction for table headers */
+    background-color: #262626;
 }
 
-td {
-    background-color: #1F1F1F;
+tbody tr:nth-child(odd) {
+    background-color: #262626; /* Darker shade for odd rows */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #1F1F1F; /* Lighter shade for even rows */
+}
+
+.checkinButton{
+    background-color: #aa2b11;
+    color: white;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.checkinButton:hover{
+    background-color: #892410;
+    color: white;
+    border-radius: 20px;
+    transform: translateY(4px);
+}
+
+tbody tr:hover {
+    background-color: #333;
 }
 
 footer {
+    background: #1F1F1F;
+    padding: 20px 0;
+    font-size: 0.8rem;
     text-align: center;
-    margin-top: 30px;
-    padding: 10px;
-    background: #1F1F1F; /* Footer matching the card background */
-    color: #E0E0E0;
-    position: relative; /* Changed from absolute to relative */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
+    margin-top: auto;
 }
 
-footer p {
-    font-size: 0.9em; /* Slightly smaller text size for footer */
-    margin: 0;
-}
-
-.alert {
-    background-color: #C62828; /* Alert color from the image for contrast */
-    color: white;
-}
-
-/* Responsive design adjustments for better viewing on all devices */
 @media (max-width: 768px) {
-    .input-area {
-        width: 90%; /* Allow some margin on smaller screens */
+    .input-area, .time-log {
+        max-width: 95%;
     }
 
-    input[type="text"] {
-        margin-bottom: 10px;
+    h1 {
+        font-size: 1.8rem;
     }
 }
