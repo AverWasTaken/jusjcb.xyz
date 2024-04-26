@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bathroom Time Tracker</title>
+    <link rel="stylesheet" href="timestyle.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Bathroom Visit Time Tracker</h1>
+        </div>
+    </header>
+    <main>
+        <div class="main-content">
+            <section class="input-area">
+                <div class="input-group">
+                    <input type="text" id="studentName" placeholder="Enter student name" onkeydown="handleKeyDown(event)">
+                    <button id="checkOutButton" onclick="checkOut()">Check Out</button>
+                </div>
+            </section>
+            <section class="time-log">
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Duration</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="log"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+      <div class="footer-content">
+          <div class="statistics">
+              <p id="totalStudents">Current Students Out: 0</p>
+              <p id="checkoutsToday">Total Check-Outs Today: 0</p>
+          </div>
+          <hr>
+          <b><p>Software Solutions Provided By Jacob Young</p></b>
+          <em><p>Licensed for Sandpoint Highschool, LPOSD #84</p></em>
+      </div>
+  </footer>
+  
+    <script src="main.js"></script>
+</body>
+</html>
