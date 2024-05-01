@@ -161,19 +161,49 @@ button#sendDataButton:hover {
     transform: translateY(-2px);
 }
 
-#spinner {
-    border: 6px solid #f3f3f3; /* Light grey */
-    border-top: 6px solid #3498db; /* Blue */
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    animation: spin 1s linear infinite;
+#overlay {
+    position: fixed;
     display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2;  /* Ensures overlay is above other content but below spinner */
+    backdrop-filter: blur(5px); /* Blurs any content behind the overlay */
+    transition: opacity 0.5s ease-in-out; /* Transition for fading effect */
+    opacity: 0; /* Start fully transparent */
+}
+
+#spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px; /* Increased size */
+    height: 50px; /* Increased size */
+    animation: spin 1s linear infinite;
+    z-index: 3;  /* Ensures spinner is above the overlay */
+    font-size: 3rem; /* Larger font size for the checkmark */
+    color: green; /* Color for the checkmark */
+    transition: opacity 0.9s ease-in-out; /* Transition for fading effect */
+    opacity: 1; /* Start fully visible */
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 

@@ -10,16 +10,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+    <div id="overlay"></div>
     <header>
         <div class="header-content">
-            <h1>Outage Time Management</h1>
+            <h1>Hallway Management</h1>
         </div>
     </header>
     <main>
         <div class="main-content">
           <section class="input-area">
             <div class="input-container">
-                <input type="text" id="studentName" placeholder="Enter student name" onkeydown="handleKeyDown(event)">
+                <input type="text" id="studentName" placeholder="Please Enter Your Name" onkeydown="handleKeyDown(event)">
             </div>
             <div class="button-container">
                 <button id="checkOutButton" onclick="checkOut()">Check Out</button>
@@ -43,12 +44,12 @@
     </main>
     <footer>
         <div class="input-container">
-            <input type="text" id="email" placeholder="Enter email to receive data">
+            <input type="text" id="email" placeholder="Please Enter Your Email For A Data Copy.">
         </div>
         <div class="footer-content">
           <div id="loadingIndicator" style="display: none;">Sending data...</div>
           <div id="spinner" style="display: none;"></div>
-          <button id="sendDataButton">Send Data To Email</button>
+          <button id="sendDataButton">Send</button>
           <div class="statistics">
               <p id="currentStudentsOut">Current Students Out: 0</p>
               <p id="totalStudentsCheckedOut">Total Check Outs: 0</p>
