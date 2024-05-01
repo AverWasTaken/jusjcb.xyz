@@ -141,6 +141,27 @@ footer {
     margin-top: auto;
 }
 
+.input-container#period{
+    background-color: red;
+}
+
+button#sendDataButton {
+    background-color: #4CAF50;
+    border-radius: 20px;
+    color: white;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 10px auto; /* Center the button horizontally */
+}
+
+button#sendDataButton:hover {
+    background-color: #4ec754;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+
 @media (max-width: 768px) {
     .input-area, .time-log {
         max-width: 95%;
