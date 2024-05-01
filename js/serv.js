@@ -1,9 +1,14 @@
 document.getElementById('sendDataButton').addEventListener('click', function() {
     const email = document.getElementById('email').value;
+
     if (!email) {
         alert('Please provide an email address');
         return;
     }
+
+    // Show loading indication
+    document.getElementById('loadingIndicator').style.display = 'block';
+    document.getElementById('sendDataButton').disabled = true;  // Disable the button to prevent multiple sends
 
     const dataToSend = {
         students: Object.keys(students).map(name => ({
@@ -27,6 +32,11 @@ document.getElementById('sendDataButton').addEventListener('click', function() {
         error: (error) => {
             console.log('Error sending data', error);
             alert('Error sending data: ' + error.statusText);
+        },
+        complete: () => {
+            // Hide loading indicator and re-enable button regardless of AJAX success or failure
+            document.getElementById('loadingIndicator').style.display = 'none';
+            document.getElementById('sendDataButton').disabled = false;
         }
     });
 });
