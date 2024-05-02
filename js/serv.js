@@ -34,35 +34,34 @@ document.getElementById('sendDataButton').addEventListener('click', function(eve
         data: JSON.stringify(dataToSend),
         success: (response) => {
             console.log('Data sent successfully');
+            // Clear the onbeforeunload event since data is successfully sent
+            window.onbeforeunload = null;
+
             document.getElementById('spinner').style.animation = 'none'; // Stop spinning animation
             document.getElementById('spinner').innerHTML = '✅'; // Show checkmark
 
-            // Clear the onbeforeunload event before showing the alert
-            window.onbeforeunload = null;
-
-            // Hide the spinner and overlay before alert
-            document.getElementById('overlay').style.opacity = 0;
-            document.getElementById('spinner').style.opacity = 0;
-
             setTimeout(function() {
+                document.getElementById('overlay').style.opacity = 0;
+                document.getElementById('spinner').style.opacity = 0;
                 document.getElementById('overlay').style.display = 'none';
                 document.getElementById('spinner').style.display = 'none';
 
-
-                // Reload page after alert is closed
+                alert("Data was successfully sent to: " +  email);
                 window.location.reload();
             }, 900); // Wait for the fade out transition before alerting
         },
         error: (error) => {
             console.log('Error sending data', error);
             alert('Error sending data: ' + (error.statusText || 'Unknown error'));
-            window.onbeforeunload = null;  // Also clear on errors before user actions
-
-            // Re-enable the button on error
-            document.getElementById('sendDataButton').disabled = false;
+            document.getElementById('sendDataButton').disabled = false;  // Re-enable the button on error
         },
         complete: () => {
             // This block remains empty since error and success cases are handled individually
         }
     });
 });
+
+// Set up the global warning for navigating away
+window.onbeforeunload = function() {
+    return "Are you sure you want to leave? Changes you made may not be saved.";
+};
