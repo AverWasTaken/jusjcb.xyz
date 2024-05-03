@@ -8,24 +8,37 @@ function handleKeyDown(event) {
 }
 
 function checkOut() {
-  const name = document.getElementById('studentName').value.trim().toLowerCase();
+  let name = document.getElementById('studentName').value.trim().toLowerCase();
   if (name === '') {
-    alert('Please enter a student name.');
-    return;
+      alert('Please enter a student name.');
+      return;
   }
 
+  // Sanitize name to allow only letters and spaces, and remove any special characters
+  name = name.replace(/[^a-z\s]/gi, '');
+
+  // Ensure that both first and last names are present
+  if (!name.includes(' ') || name.split(' ').length < 2) {
+      alert('Please enter both first and last names.');
+      return;
+  }
+
+  // Ensure the name is formatted properly as 'Firstname Lastname'
+  name = name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
   if (students[name] && !students[name].checkedIn) {
-    alert('This student has already checked out and not checked back in.');
-    return;
+      alert('This student has already checked out and not checked back in.');
+      return;
   }
 
   const now = new Date();
   if (!students[name]) {
-    students[name] = { durations: [], checkOutCount: 0 };
+      students[name] = { durations: [], checkOutCount: 0, totalDuration: 0, checkTimes: [] };
   }
   students[name].checkOutCount += 1;
   students[name].checkOutTime = now;
   students[name].checkedIn = false;
+  students[name].checkTimes.push({ left: now.toLocaleTimeString() });  // Store checkout time
 
   clearInterval(intervalId[name]);
   intervalId[name] = setInterval(() => updateLiveTime(name), 1000);
@@ -36,11 +49,13 @@ function checkOut() {
 function checkIn(name) {
   clearInterval(intervalId[name]);
   const checkOutTime = students[name].checkOutTime;
-  const duration = Math.floor((new Date() - checkOutTime) / 1000);
+  const now = new Date();
+  const duration = Math.floor((now - checkOutTime) / 1000);
   students[name].totalDuration += duration;
   students[name].durations.push(duration);
+  students[name].checkTimes[students[name].checkTimes.length - 1].returned = now.toLocaleTimeString(); // Store check-in time
   students[name].checkedIn = true;
-  displayLog(name, students[name].durations);
+  displayLog(name, students[name].durations, false); // Pass false to update without appending
   displayStatistics();
 }
 
@@ -49,6 +64,8 @@ function updateLiveTime(name) {
   const currentDuration = Math.floor((new Date() - checkOutTime) / 1000);
   const durations = [...students[name].durations, currentDuration];
   const shouldHighlightRed = currentDuration >= 300; // Highlight red if 5 minutes passed
+
+  // Update log continuously with current live duration
   displayLog(name, durations, true, shouldHighlightRed);
 }
 

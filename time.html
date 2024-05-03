@@ -8,6 +8,8 @@
     <title>Outage Time Tracker</title>
     <link rel="stylesheet" href="styles/timestyle.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/serv.js" defer></script>
 </head>
 <body>
     <div id="overlay"></div>
@@ -17,7 +19,13 @@
         </div>
     </header>
     <main>
-        <div class="main-content">
+        <div id="loginContainer">
+            <input type="text" id="teacherName" class="log" placeholder="Please Enter Your Name">
+            <input type="text" id="periodNumber" class="log" placeholder="Enter Period (e.g., 1A, 2B)">
+            <button id="submitInfoButton">Submit</button>
+        </div>
+        
+        <div id ='mainProgram' class="main-content" style="display:none">
           <section class="input-area">
             <div class="input-container">
                 <input type="text" id="studentName" placeholder="Please Enter Your Name" onkeydown="handleKeyDown(event)">
@@ -43,14 +51,11 @@
         </div>
     </main>
     <footer>
-        <div class="input-container">
-            <input type="text" id="email" placeholder="Please Enter Your Email For A Data Copy.">
-        </div>
         <div class="footer-content">
-          <div id="loadingIndicator" style="display: none;">Sending data...</div>
+          <div id="loadingIndicator" style="display: none;" >Sending data...</div>
           <div id="spinner" style="display: none;"></div>
-          <button id="sendDataButton">Send</button>
-          <div class="statistics">
+          <button id="sendDataButton" style="display: none;">Submit Data</button>
+          <div class="statistics" style="display: none;" id="stats">
               <p id="currentStudentsOut">Current Students Out: 0</p>
               <p id="totalStudentsCheckedOut">Total Check Outs: 0</p>
           </div>
@@ -60,9 +65,5 @@
             <em><p class="lic">Licensed for Sandpoint Highschool, LPOSD #84</p></em>
         </div>
       </footer>
-      
-  
-    <script src="js/main.js"></script>
-    <script src="js/serv.js"></script>
 </body>
 </html>

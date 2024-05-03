@@ -1,67 +1,80 @@
-document.getElementById('sendDataButton').addEventListener('click', function(event) {
-    event.preventDefault();  // Prevents traditional form submission
+document.addEventListener("DOMContentLoaded", function() {
+    // Handle the submission of initial data
+    document.getElementById('submitInfoButton').addEventListener('click', function(event) {
+        event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;  // Simple regex for email validation
+        var teacherName = document.getElementById('teacherName').value.trim();
+        var periodNumber = document.getElementById('periodNumber').value.trim();
+        var periodRegex = /^[1-4][AB]$/;  // Regex to ensure format like "1A", "2B", etc.
 
-    if (!email || !emailRegex.test(email)) {
-        alert('Please provide a valid email address');
-        return;
-    }
+        if (!teacherName || !periodNumber.match(periodRegex)) {
+            alert('Please enter valid name and period (e.g., "1A", "2B").');
+            return;
+        }
 
-    // Show loading indication
-    document.getElementById('overlay').style.display = 'block';
-    document.getElementById('overlay').style.opacity = 1;  // Make overlay visible
-    document.getElementById('spinner').style.display = 'block';  // Display the spinner
-    document.getElementById('spinner').style.opacity = 1;  // Make spinner visible
-    document.getElementById('spinner').innerHTML = ''; // Reset the spinner to not show checkmark
-    document.getElementById('sendDataButton').disabled = true;  // Disable the button to prevent multiple sends
+        sessionStorage.setItem('teacherName', teacherName);
+        sessionStorage.setItem('periodNumber', periodNumber);
 
-    const dataToSend = {
-        students: Object.keys(students).map(name => ({
-            name: name,
-            durations: students[name].durations,
-            checkOutCount: students[name].checkOutCount,
-            totalDuration: students[name].totalDuration
-        })),
-        email: email  // Attach the provided email to the payload
-    };
+        document.getElementById('loginContainer').style.display = 'none';
+        document.getElementById('mainProgram').style.display = 'block';
+        document.getElementById('sendDataButton').style.display = '';
+        document.getElementById('stats').style.display = '';
+    });
 
-    $.ajax({
-        url: 'https://249b-3-143-218-26.ngrok-free.app/upload',
-        type: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify(dataToSend),
-        success: (response) => {
-            console.log('Data sent successfully');
-            // Clear the onbeforeunload event since data is successfully sent
-            window.onbeforeunload = null;
-
-            document.getElementById('spinner').style.animation = 'none'; // Stop spinning animation
-            document.getElementById('spinner').innerHTML = '✅'; // Show checkmark
-
-            setTimeout(function() {
-                document.getElementById('overlay').style.opacity = 0;
-                document.getElementById('spinner').style.opacity = 0;
+    document.getElementById('sendDataButton').addEventListener('click', function(event) {
+        event.preventDefault();
+    
+        // Show loading indication
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('overlay').style.opacity = 1;  // Make overlay visible
+        document.getElementById('spinner').style.display = 'block';  // Display the spinner
+        document.getElementById('spinner').style.opacity = 1;  // Make spinner visible
+        document.getElementById('spinner').innerHTML = ''; // Reset the spinner to not show checkmark
+        document.getElementById('sendDataButton').disabled = true;  // Disable the button to prevent multiple sends
+    
+        const teacherName = sessionStorage.getItem('teacherName');
+        const periodNumber = sessionStorage.getItem('periodNumber');
+        const dataToSend = {
+            students: Object.keys(students).map(name => ({
+                name: name,
+                durations: students[name].durations,
+                checkOutCount: students[name].checkOutCount,
+                totalDuration: students[name].totalDuration,
+                checkTimes: students[name].checkTimes
+            })),
+            teacherName: teacherName,
+            periodNumber: periodNumber
+        };
+    
+        // Send data to the backend
+        $.ajax({
+            url: 'https://249b-3-143-218-26.ngrok-free.app/upload',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(dataToSend),
+            success: function(response) {
+                setTimeout(function() {
+                    document.getElementById('overlay').style.display = 'none';
+                    document.getElementById('spinner').style.display = 'none';
+                    document.getElementById('sendDataButton').disabled = false;  // Re-enable the send button
+                    alert("Data was successfully updated in the master sheet.");
+                    window.location.reload();
+                }, 900);  // Adjust this timeout as necessary
+            },
+            error: function(error) {
                 document.getElementById('overlay').style.display = 'none';
                 document.getElementById('spinner').style.display = 'none';
-
-                alert("Data was successfully sent to: " +  email);
-                window.location.reload();
-            }, 900); // Wait for the fade out transition before alerting
-        },
-        error: (error) => {
-            console.log('Error sending data', error);
-            alert('Error sending data: ' + (error.statusText || 'Unknown error'));
-            document.getElementById('sendDataButton').disabled = false;  // Re-enable the button on error
-        },
-        complete: () => {
-            // This block remains empty since error and success cases are handled individually
-        }
+                document.getElementById('sendDataButton').disabled = false;  // Re-enable the send button
+                alert('Error sending data: ' + (error.statusText || 'Unknown error'));
+            }
+        });
     });
-});
 
-// Set up the global warning for navigating away
-window.onbeforeunload = function() {
-    return "Are you sure you want to leave? Changes you made may not be saved.";
-};
+    // Clear sessionStorage immediately on page load
+    sessionStorage.clear();
+
+    // Set up the global warning for navigating away
+    window.onbeforeunload = function() {
+        return "Are you sure you want to leave? Changes you made may not be saved.";
+    };
+});
