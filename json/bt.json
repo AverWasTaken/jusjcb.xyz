@@ -1,14 +1,5 @@
 {
   "btschedule": [
-    {"date": "04-22-2024", "bulldogTime": "1B", "day": "B"},
-    {"date": "04-23-2024", "bulldogTime": "2B", "day": "A"},
-    {"date": "04-24-2024", "bulldogTime": "3B", "day": "B"},
-    {"date": "04-25-2024", "bulldogTime": "4B", "day": "A"},
-    {"date": "04-29-2024", "bulldogTime": "1A", "day": "B"},
-    {"date": "04-30-2024", "bulldogTime": "2A", "day": "A"},
-    {"date": "05-1-2024", "bulldogTime": "3A", "day": "B"},
-    {"date": "05-2-2024", "bulldogTime": "4A", "day": "A"},
-    {"date": "05-3-2024", "day": "B"},
     {"date": "05-6-2024", "bulldogTime": "1B", "day": "A"},
     {"date": "05-7-2024", "bulldogTime": "2B", "day": "B"},
     {"date": "05-8-2024", "bulldogTime": "3B", "day": "A"},
@@ -18,6 +9,26 @@
     {"date": "05-14-2024", "bulldogTime": "2A", "day": "A"},
     {"date": "05-15-2024", "bulldogTime": "3A", "day": "B"},
     {"date": "05-16-2024", "bulldogTime": "4A", "day": "A"},
-    {"date": "05-17-2024", "day": "B"}
+    {"date": "05-17-2024", "day": "B"},
+    {"date": "05-20-2024", "bulldogTime": "1B", "day": "A"},
+    {"date": "05-21-2024", "bulldogTime": "2B", "day": "B"},
+    {"date": "05-22-2024", "bulldogTime": "3B", "day": "A"},
+    {"date": "05-23-2024", "bulldogTime": "4B", "day": "B"},
+    {"date": "05-28-2024", "bulldogTime": "2A", "day": "A"},
+    {"date": "05-29-2024", "bulldogTime": "3A", "day": "B"},
+    {"date": "05-30-2024", "bulldogTime": "4A", "day": "A"},
+    {"date": "05-31-2024", "day": "A"},
+    {"date": "06-3-2024", "bulldogTime": "1B", "day": "A"},
+    {"date": "06-4-2024", "bulldogTime": "2B", "day": "B"},
+    {"date": "06-5-2024", "bulldogTime": "3B", "day": "A"},
+    {"date": "06-6-2024", "bulldogTime": "4B", "day": "B"},
+    {"date": "06-7-2024", "bulldogTime": "Last Day!", "day": "A"}
   ]
 }
+
+
+
+
+
+
+
