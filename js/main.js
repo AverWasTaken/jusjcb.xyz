@@ -8,23 +8,30 @@ function handleKeyDown(event) {
 }
 
 function checkOut() {
-  let name = document.getElementById('studentName').value.trim().toLowerCase();
+  let name = document.getElementById('studentName').value.trim();
   if (name === '') {
       alert('Please enter a student name.');
       return;
   }
 
-  // Sanitize name to allow only letters and spaces, and remove any special characters
-  name = name.replace(/[^a-z\s]/gi, '');
+  // Check for invalid characters
+  if (/[\$\%\^\&\*\(\)\@]/.test(name)) {
+      alert('The name contains invalid characters.');
+      return;
+  }
 
-  // Ensure that both first and last names are present
-  if (!name.includes(' ') || name.split(' ').length < 2) {
-      alert('Please enter both first and last names.');
+  // Convert to lowercase for further processing
+  name = name.toLowerCase();
+
+  // Ensure that both first and last names are present, and each part has a minimum length of 2 characters
+  const nameParts = name.split(' ').filter(part => part.length > 1);
+  if (nameParts.length < 2) {
+      alert('Please enter both a first and a last name, each with at least 2 letters.');
       return;
   }
 
   // Ensure the name is formatted properly as 'Firstname Lastname'
-  name = name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  name = nameParts.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
   if (students[name] && !students[name].checkedIn) {
       alert('This student has already checked out and not checked back in.');
@@ -106,8 +113,9 @@ function formatDuration(seconds) {
 
 function displayLog(name, durations, update = false) {
   let row = document.querySelector(`tr[data-name="${name}"]`);
+
   
-  // Ensure 'durations' is an array before trying to use .map
+  // Ensure 'durations' is an array before trying to use .map or modify it
   if (!Array.isArray(durations)) {
     console.error('Expected durations to be an array, but received:', durations);
     durations = []; // Fallback to an empty array to prevent errors
