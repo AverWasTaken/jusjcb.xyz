@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +13,11 @@
     <script src="js/serv.js" defer></script>
 </head>
 <body>
+    <div id="spinner" style="display: none;"></div>
     <div id="overlay"></div>
     <header>
         <div class="header-content">
-            <h1>Hallway Management</h1>
+            <h1>Hello! Please login below.</h1>
         </div>
     </header>
     <main>
@@ -53,7 +55,6 @@
     <footer>
         <div class="footer-content">
           <div id="loadingIndicator" style="display: none;" >Sending data...</div>
-          <div id="spinner" style="display: none;"></div>
           <button id="sendDataButton" style="display: none;">Submit Data</button>
           <div class="statistics" style="display: none;" id="stats">
               <p id="currentStudentsOut">Current Students Out: 0</p>

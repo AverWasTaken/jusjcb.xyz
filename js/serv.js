@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function() {
         sessionStorage.setItem('teacherName', teacherName);
         sessionStorage.setItem('periodNumber', periodNumber);
 
+        document.querySelector('.header-content h1').textContent = 'Welcome ' + teacherName + ',\n' + " This Is Period " + periodNumber;
+
         document.getElementById('loginContainer').style.display = 'none';
         document.getElementById('mainProgram').style.display = 'block';
         document.getElementById('sendDataButton').style.display = '';
