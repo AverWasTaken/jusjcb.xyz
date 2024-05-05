@@ -1,27 +1,69 @@
-body, html {
+
+html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     background: #121212;
     color: #E0E0E0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-input[type="text"], button {
-    width: 90%; /* Adjust width to fit your design */
-    margin: 10px; /* Provide spacing around elements */
-    padding: 8px; /* Padding for better text visibility */
+body {
+    justify-content: space-between; 
+    align-items: center; 
+    min-height: 100vh; 
+    overflow-x: hidden; 
 }
 
 
-header {
+#loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    background: #1F1F1F;
-    padding: 20px 0;
+    max-width: 350px;
+    padding: 40px;
+    background-color: #262626;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    flex: 1 0 auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+}
+
+
+#loginContainer input[type="text"], #loginContainer button {
+    width: 100%;
+    margin: 5px 0;
+}
+
+
+#loginContainer input[type="text"]:hover, #loginContainer button:hover {
+    background-color: #333333;
+}
+
+input[type="text"], button {
+    width: 90%;
+    margin: 10px;
+    padding: 8px;
+}
+
+
+header, footer {
+    width: 100%;
+    padding: 20px 0; 
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #1F1F1F;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hidden-column {
@@ -55,7 +97,7 @@ h1 {
 
 .input-area, .time-log {
     width: 100%;
-    max-width: 700px; /* Adjust this to fit your content width */
+    max-width: 700px; 
     margin: 0 auto 20px;
     padding: 20px;
     background: #1F1F1F;
@@ -73,7 +115,7 @@ input[type="text"], button {
     border: none;
     border-radius: 4px;
     transition: all 0.3s ease;
-    margin-bottom: 10px; /* Space between input and button */
+    margin-bottom: 10px; 
 }
 
 input#teacherName, input#periodNumber{
@@ -97,7 +139,7 @@ button#checkOutButton{
     background-color: #4CAF50;
     border-radius: 20px;
     color: rgb(255, 251, 251);
-    margin-bottom: 10px; /* Space between button and table */
+    margin-bottom: 10px; 
     transition: all 0.3s ease;
     display: block;
     margin: auto;
@@ -107,7 +149,7 @@ button#submitInfoButton{
     background-color: #4CAF50;
     border-radius: 20px;
     color: rgb(255, 251, 251);
-    margin-bottom: 10px; /* Space between button and table */
+    margin-bottom: 10px; 
     transition: all 0.3s ease;
     display: block;
     margin: auto;
@@ -118,6 +160,25 @@ button#checkOutButton:hover {
     background-color: #4ec754;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     transform: translateY(4px);
+}
+
+#sendDataButton {
+    position: fixed;
+    top: 40px;
+    right: 90px;
+    background-color: #4CAF50;
+    border-radius: 20px;
+    color: white;
+    padding: 24px 20px;  /* Increased padding for a larger button */
+    width: 200px;  /* Increased width for a larger appearance */
+    z-index: 1000;
+    display: block;
+}
+
+#sendDataButton:hover {
+    background-color: #4ec754;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
 button:hover {
@@ -140,11 +201,11 @@ th {
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #262626; /* Darker shade for odd rows */
+    background-color: #262626; 
 }
 
 tbody tr:nth-child(even) {
-    background-color: #1F1F1F; /* Lighter shade for even rows */
+    background-color: #1F1F1F; 
 }
 
 .checkinButton{
@@ -170,7 +231,7 @@ footer {
     padding: 20px 0;
     font-size: 0.8rem;
     text-align: center;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
     width: 100%;
     margin-top: auto;
 }
@@ -186,13 +247,21 @@ button#sendDataButton {
     padding: 10px 20px;
     transition: all 0.3s ease;
     display: block;
-    margin: 10px auto; /* Center the button horizontally */
+    margin: 10px auto; 
 }
 
 button#sendDataButton:hover {
     background-color: #4ec754;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
+}
+
+#currentStudentsOut{
+    font-size: 1.8em;
+}
+#totalStudentsCheckedOut{
+    font-size: 1.6em;
+
 }
 
 #overlay {
@@ -204,11 +273,11 @@ button#sendDataButton:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 2;  /* Ensures overlay is above other content but below spinner */
-    backdrop-filter: blur(5px); /* Blurs any content behind the overlay */
-    transition: opacity 0.5s ease-in-out; /* Transition for fading effect */
-    opacity: 0; /* Start fully transparent */
+    background-color: rgba(0,0,0,0.5); 
+    z-index: 2;  
+    backdrop-filter: blur(5px); 
+    transition: opacity 0.5s ease-in-out; 
+    opacity: 0; 
 }
 
 #spinner {
@@ -216,16 +285,16 @@ button#sendDataButton:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #3498db; /* Blue */
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #3498db; 
     border-radius: 50%;
-    width: 50px; /* Increased size */
-    height: 50px; /* Increased size */
+    width: 50px; 
+    height: 50px; 
     animation: spin 1s linear infinite;
-    z-index: 3;  /* Ensures spinner is above the overlay */
-    font-size: 3rem; /* Larger font size for the checkmark */
-    color: green; /* Color for the checkmark */
-    transition: opacity 0.9s ease-in-out; /* Transition for fading effect */
+    z-index: 3;  
+    font-size: 3rem;
+    color: green; 
+    transition: opacity 0.9s ease-in-out; 
     opacity: 1; /* Start fully visible */
 }
 
