@@ -33,6 +33,15 @@ function checkOut() {
   // Ensure the name is formatted properly as 'Firstname Lastname'
   name = nameParts.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
+  // List of blacklisted names
+  const blacklistedNames = ['Ben Dover', 'Mike Hawk', 'Mike Oxlong', 'Mike Oxmaul', 'Mike Rotch', 'Jenna Tills', 'Penis Penis', 'Fuck Fuck', 'Bitch Bitch', 'Cock Cock', 'Nigga Nigga', 'Nigger Nigger'];
+
+  // Check if the formatted name is in the blacklisted names list
+  if (blacklistedNames.includes(name)) {
+      alert('This name is disallowed. Please enter appropriate names only.');
+      return;
+  }
+
   if (students[name] && !students[name].checkedIn) {
       alert('This student has already checked out and not checked back in.');
       return;
