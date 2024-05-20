@@ -1,76 +1,137 @@
 <!DOCTYPE html>
-<!--Hey there! It's ayvyr, the developer of the site! Fancy seeing you here, haha <3-->
-<html>
-    <head>
-        <title>Hey, I'm Jacob!</title>
+<html lang="en">
+<head>
+    <title>Hey, I'm Jacob!</title>
 
-        <!--Font Imports-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@600&family=Nunito:ital,wght@1,800&family=Quicksand:wght@600&display=swap" rel="stylesheet">
-        <!--Font Imports-->
+    <!-- Font Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@600&family=Nunito:ital,wght@1,800&family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-        <link rel="icon" type="image" href="content/icon..png">
-        <link rel="stylesheet" href="styles/style.css">
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="JusJcb.xyz | Development & More." />
+    <meta property="og:description" content="Quality development, Quality Time. Contact me through discord | ayvyr" />
+    <meta property="og:type" content="website"/>
+    <meta name="theme-color" content="#FFFFFF">
+    <meta property="og:image" content="https://i.imgur.com/KAeDggY.png">
 
-        <!--Meta Tags-->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta property="og:title" content="JusJcb.xyz | Development & More." />
-        <meta property="og:description" content="Quality development, Quality Time. Contact me through discord | ayvyr" />
-        <meta property="og:type" content="website"/>
-        <meta name="theme-color" content="FFFFFF">
-        <meta property="og:image" content="https://i.imgur.com/KAeDggY.png"> 
-        <!--Meta Tags-->
+    <!-- Icon and CSS -->
+    <link rel="icon" type="image/png" href="content/icon.png">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
-        <script src="https://app.embed.im/snow.js" defer></script>
-        <script>
-            document.addEventListener('touchmove', function(e) {
-              e.preventDefault();
-            }, { passive: false });
-          </script>
-    </head>
-    
-    <body>
-        <div id="preloader"></div>
-        <div class="content-area" style="visibility: hidden">
-            <h1 class="text">Hey, I'm Jacob!<br> <span class="small">I'm <span id="typing"></span> <br> Check Out My Projects Here!</h1>
-                <span id="typing"></span>
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff6ec7, #6fe6fa);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
 
-                <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-                <script src="js/preloader.js"></script>
-        
-                <script>
-                    const words = [
-                    'a developer.',
-                    'a creator.',
-                    'an ai enthusiast.',
-                    'certified in web development.',
-                    'an aspiring volleyball player.',
-                    'a little tired.',
-                    'a coffee addict.',
-                    'in need of some food asap.',
-                    'getting tired.',
-                    'wondering why youre still here...',
-                    'very thankful for you :)'
-                    ];
-                
-                    var typed = new Typed('#typing', {
-                        strings: words,
-                        typeSpeed: 70,
-                        backSpeed: 50,
-                        backDelay: 1000,
-                        startDelay: 500,
-                        loop: true,
-                        showCursor: true,
-                        cursorChar: '|',
-                    });
-                </script>
+<body>
+    <div id="preloader"></div>
+    <div class="content-area" style="visibility: hidden;">
+        <h1 class="text" data-aos="fade-down">Hey, I'm Jacob!<br> <span class="small"><span class="im-wrapper">I'm <span id="typing"></span></span><br> Check Out My Projects Below!</span></h1>
 
-                <div class="social">
-                    <a href="https://www.instagram.com/jus.jcb/" target="_blank"><img src="content/instagram.png" class="insta"></a>
-                    <a href="https://github.com/AverWasTaken" target="_blank"><img src="content/social-media.png" class="github"></a>
-                </div>
+        <div class="project-showcase">
+            <div class="project-box" data-aos="fade-up">
+                <h2>Live School Schedule</h2>
+                <p>A tool to help students and teachers within my own school know what period there in, and how long it will last!</p>
+                <a href="https://jusjcb.xyz/shs" target="_blank">Visit Project</a>
+            </div>
+            <div class="project-box" data-aos="fade-up" data-aos-delay="100">
+                <h2>School Checkout Management</h2>
+                <p>A tool to help teachers & staff manage students outside of class.</p>
+                <a href="https://jusjcb.xyz/time" target="_blank">Visit Project</a>
+            </div>
+            <div class="project-box" data-aos="fade-up" data-aos-delay="200">
+                <h2>Grade Converter</h2>
+                <p>A helpful tool to convert percentages into grades!</p>
+                <a href="https://jusjcb.xyz/grades" target="_blank">Visit Project</a>
+            </div>
         </div>
-    </body>
+
+        <div class="social" data-aos="fade-in" data-aos-delay="300">
+            <a href="https://www.instagram.com/jus.jcb/" target="_blank" class="social-button"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://github.com/AverWasTaken" target="_blank" class="social-button"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/jacob-young-a1823a2b2/" target="_blank" class="social-button"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- Internal Scripts -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="js/preloader.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const words = [
+            'a developer.',
+            'a creator.',
+            'an AI enthusiast.',
+            'certified in web development.',
+            'an aspiring volleyball player.',
+            'a little tired.',
+            'a coffee addict.',
+            'in need of some food asap.',
+            'getting tired.',
+            'wondering why you\'re still here...',
+            'very thankful for you :)'
+        ];
+
+        const typed = new Typed('#typing', {
+            strings: words,
+            typeSpeed: 70,
+            backSpeed: 50,
+            backDelay: 1000,
+            startDelay: 500,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|',
+            smartBackspace: true,
+            fadeOut: true,
+            fadeOutClass: 'typed-fade-out',
+            fadeOutDelay: 500,
+            onComplete: (self) => {
+                const imWrapper = document.querySelector('.im-wrapper');
+                imWrapper.style.transform = 'translateX(0.75em)'; // Adjust based on the required distance
+            },
+            preStringTyped: (arrayPos, self) => {
+                const imWrapper = document.querySelector('.im-wrapper');
+                imWrapper.style.transform = 'translateX(0)'; // Reset the position before typing the next string
+            }
+        });
+
+        document.addEventListener('touchmove', function (e) {
+            e.preventDefault();
+        }, { passive: false });
+
+        AOS.init({
+            duration: 1000,
+            once: true, // Ensure animations only happen once
+        });
+
+        // Show content after preloader
+        window.addEventListener('load', function () {
+            document.querySelector('.content-area').style.visibility = 'visible';
+            document.getElementById('preloader').style.display = 'none';
+        });
+
+        // Trigger animations on scroll
+        document.querySelectorAll('.project-showcase, .social').forEach((el) => {
+            el.style.visibility = 'visible';
+            AOS.refresh(); // Refresh AOS to ensure elements are visible and animated
+        });
+    });
+    </script>
+</body>
 </html>
