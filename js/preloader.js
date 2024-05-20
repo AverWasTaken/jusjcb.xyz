@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
         setTimeout(function() {
             preloader.style.display = 'none';
             preloader.remove(); // This line ensures the element is removed from the DOM
-        }, 600); // This delay should match the duration of the opacity transition
+        }, 1300); // This delay should match the duration of the opacity transition
     }
 
     // Make all elements with the 'content-area' class visible
@@ -17,4 +17,3 @@ window.addEventListener('load', function() {
         element.style.visibility = 'visible';
     });
 });
-
