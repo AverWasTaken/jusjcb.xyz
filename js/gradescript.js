@@ -5,7 +5,15 @@ document.getElementById('percentage').addEventListener('keypress', function(even
 });
 
 function convertToGrade() {
-    const percentage = document.getElementById('percentage').value;
+    const percentageInput = document.getElementById('percentage').value;
+    let percentage;
+
+    if (percentageInput.endsWith("%")) {
+        percentage = percentageInput.slice(0, -1);
+    } else {
+        percentage = percentageInput;
+    }
+    
     let grade;
     let gradeClass;
 
